@@ -3,7 +3,26 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-import './index.css'
+import ru from './resources/ru.json'
+import en from './resources/en.json'
+
+import i18next from 'i18next'
+import {initReactI18next} from 'react-i18next'
+
+const resources = {
+	ru: { translation: ru },
+	en: { translation: en }
+}
+
+void i18next
+	.use(initReactI18next)
+	.init({
+		resources,
+		lng: 'en',
+		interpolation: {
+			escapeValue: false
+		}
+	})
 
 ReactDOM.render(
 	<React.StrictMode>

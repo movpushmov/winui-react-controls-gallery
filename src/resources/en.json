@@ -1,0 +1,120 @@
+{
+  "basic_input": {
+    "Button": {
+      "short_desc": "A control that responds to user input and raises a Click event.",
+      "long_desc": "The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look.",
+
+      "samples": {
+        "text_content": {
+          "title": "A simple Button with text content.",
+          "checkbox": "Disable button",
+          "content": "Standard React button"
+        },
+        "large_content": {
+          "title": "Wrapping Buttons with large content.",
+          "content": "This is some text that is too long and will get cut off"
+        },
+        "accent_styled": {
+          "title": "Accent style applied to Button.",
+          "content": "Accent style button"
+        }
+      },
+
+      "related": [
+        "ToggleButton",
+        "RepeatButton",
+        "HyperlinkButton"
+      ]
+    },
+    "DropDownButton": {
+      "short_desc": "A button that displays a flyout of choices when clicked.",
+      "long_desc": "A control that drops down a flyout of choices from which one can be chosen.",
+
+      "samples": {
+        "simple": {
+          "title": "Simple DropDownButton.",
+
+          "label": "Email",
+          "elements": [
+            "Send",
+            "Reply",
+            "Reply All"
+          ]
+        },
+        "withIcons": {
+          "title": "DropDownButton with icons.",
+
+          "labelIcon": "Mail",
+          "elements": [
+            { "icon": "SendFill", "label": "Send" },
+            { "icon": "MailReply", "label": "Reply" },
+            { "icon": "MailReplyAll", "label": "Reply All" }
+          ]
+        }
+      },
+
+      "related": [
+        "SplitButton",
+        "ToggleSplitButton",
+        "ToggleButton",
+        "RepeatButton",
+        "HyperlinkButton"
+      ]
+    },
+    "HyperlinkButton": {
+      "short_desc": "A button that appears as hyperlink text, and can navigate to a URI or handle a Click event.",
+      "long_desc": "A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the child <Link> component from react-router-dom or <a> from HTML.",
+
+      "samples": {
+        "uri": {
+          "title": "A hyperlink button that navigates to a URI",
+          "checkbox": "Disable hyperlink button",
+          "content": "WinUI React home page"
+        }
+      },
+
+      "related": [
+        "Button",
+        "ToggleButton",
+        "RepeatButton"
+      ]
+    },
+    "ToggleButton": {
+      "short_desc": "A button that can be switched between two states like a CheckBox.",
+      "long_desc": "A ToggleButton looks like a Button, but works like a CheckBox. It typically has two states, checked (on) or unchecked (off). You can determine it's state by checking the value or defaultValue property.",
+
+      "samples": {
+        "simple": {
+          "title": "A simple ToggleButton with text content.",
+          "checkbox": "Disable ToggleButton",
+          "content": "ToggleButton"
+        }
+      },
+
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "SplitButton": {
+      "short_desc": "A two-part button that displays a flyout when its secondary part is clicked.",
+      "long_desc": "The SplitButton is a dropdown button, but with an addition execution hit target.",
+
+      "samples": [
+
+      ],
+
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "ToggleSplitButton": {},
+    "CheckBox": {},
+    "RadioButton": {},
+    "Slider": {},
+    "ToggleSwitch": {}
+  }
+}

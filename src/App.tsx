@@ -1,8 +1,7 @@
-import React, { CSSProperties } from 'react'
-import './lib/winui.css'
-import { NavigationView } from './lib/Navigation/NavigationView/NavigationView'
-import { NavigationViewItem } from './lib/Navigation/NavigationView/NavigationViewItem'
-import { IconType } from './lib/Icons/Icon'
+import React from 'react'
+import 'winui-react/winui.css'
+import 'winui-react/main.css'
+import { NavigationView, NavigationViewItem, IconType } from 'winui-react'
 
 function App(): React.ReactElement {
 	return (

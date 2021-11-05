@@ -10,13 +10,16 @@
     "@types/node": "^12.20.26",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "i18next": "^21.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.13.0",
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "typescript": "^4.4.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "winui-react": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,8 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router": "^5.1.16",
-    "@types/react-router-dom": "^5.3.0",
+    "@types/react-router": "^5.1.17",
+    "@types/react-router-dom": "^5.3.2",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^7.32.0",
