@@ -7,11 +7,12 @@ import ru from './resources/ru.json'
 import en from './resources/en.json'
 
 import i18next from 'i18next'
-import {initReactI18next} from 'react-i18next'
+import { initReactI18next } from 'react-i18next'
+import { BrowserRouter } from 'react-router-dom'
 
 const resources = {
 	ru: { translation: ru },
-	en: { translation: en }
+	en: { translation: en },
 }
 
 void i18next
@@ -20,13 +21,15 @@ void i18next
 		resources,
 		lng: 'en',
 		interpolation: {
-			escapeValue: false
-		}
+			escapeValue: false,
+		},
 	})
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById('root'),
 )

@@ -1,5 +1,5 @@
 {
-  "basic_input": {
+  "BasicInput": {
     "Button": {
       "short_desc": "A control that responds to user input and raises a Click event.",
       "long_desc": "The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look.",
@@ -220,7 +220,7 @@
       ]
     }
   },
-  "collections": {
+  "Collections": {
     "GridView": {
       "short_desc": "A control that presents a collection of items in rows and columns.",
       "long_desc": "The GridView lets you show a collection of items arranged in rows and columns that scroll horizontally.",
@@ -285,7 +285,7 @@
       ]
     }
   },
-  "dialogs_and_flyouts": {
+  "DialogsAndFlyouts": {
     "ContentDialog": {
       "short_desc": "A dialog box that can be customized to contain any content.",
       "long_desc": "Use a ContentDialog to show relevant information or to provide a modal dialog experience that can show any content.",
@@ -340,7 +340,7 @@
       ]
     }
   },
-  "navigation": {
+  "Navigation": {
     "NavigationView": {
       "short_desc": "Common vertical layout for top-level areas of your app via a collapsible navigation menu.",
       "long_desc": "The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu.",
@@ -375,7 +375,7 @@
       "related": []
     }
   },
-  "status_and_info": {
+  "StatusAndInfo": {
     "InfoBadge": {
       "short_desc": "An non-intrusive UI to display notifications or bring focus to an area",
       "long_desc": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
@@ -489,7 +489,7 @@
       ]
     }
   },
-  "text": {
+  "Text": {
     "NumberBox": {
       "short_desc": "A text control used for numeric input and evaluation of algebraic equations.",
       "long_desc": "Use NumberBox to allow users to enter algebraic equations and numeric input in your app.",

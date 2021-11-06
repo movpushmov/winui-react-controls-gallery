@@ -17,6 +17,7 @@
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-syntax-highlighter": "^15.4.4",
     "typescript": "^4.4.3",
     "web-vitals": "^1.1.2",
     "winui-react": "^1.0.0"
@@ -48,6 +49,7 @@
   "devDependencies": {
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.2",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "eslint": "^7.32.0",

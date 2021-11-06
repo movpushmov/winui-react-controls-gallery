@@ -1,0 +1,578 @@
+{
+  "BasicInput": {
+    "Button": {
+      "short_desc": "A control that responds to user input and raises a Click event.",
+      "long_desc": "The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look.",
+
+      "samples": {
+        "text_content": {
+          "title": "A simple Button with text content.",
+          "checkbox": "Disable button",
+          "content": "Standard React button"
+        },
+        "large_content": {
+          "title": "Wrapping Buttons with large content.",
+          "content": "This is some text that is too long and will get cut off"
+        },
+        "accent_styled": {
+          "title": "Accent style applied to Button.",
+          "content": "Accent style button"
+        }
+      },
+
+      "related": [
+        "ToggleButton",
+        "RepeatButton",
+        "HyperlinkButton"
+      ]
+    },
+    "DropDownButton": {
+      "short_desc": "A button that displays a flyout of choices when clicked.",
+      "long_desc": "A control that drops down a flyout of choices from which one can be chosen.",
+
+      "samples": {
+        "simple": {
+          "title": "Simple DropDownButton.",
+
+          "label": "Email",
+          "elements": [
+            "Send",
+            "Reply",
+            "Reply All"
+          ]
+        },
+        "withIcons": {
+          "title": "DropDownButton with icons.",
+
+          "labelIcon": "Mail",
+          "elements": [
+            { "icon": "SendFill", "label": "Send" },
+            { "icon": "MailReply", "label": "Reply" },
+            { "icon": "MailReplyAll", "label": "Reply All" }
+          ]
+        }
+      },
+
+      "related": [
+        "SplitButton",
+        "ToggleSplitButton",
+        "ToggleButton",
+        "RepeatButton",
+        "HyperlinkButton"
+      ]
+    },
+    "HyperlinkButton": {
+      "short_desc": "A button that appears as hyperlink text, and can navigate to a URI or handle a Click event.",
+      "long_desc": "A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the child <Link> component from react-router-dom or <a> from HTML.",
+
+      "samples": {
+        "uri": {
+          "title": "A hyperlink button that navigates to a URI",
+          "checkbox": "Disable hyperlink button",
+          "content": "WinUI React home page"
+        }
+      },
+
+      "related": [
+        "Button",
+        "ToggleButton",
+        "RepeatButton"
+      ]
+    },
+    "ToggleButton": {
+      "short_desc": "A button that can be switched between two states like a CheckBox.",
+      "long_desc": "A ToggleButton looks like a Button, but works like a CheckBox. It typically has two states, checked (on) or unchecked (off). You can determine it's state by checking the value or defaultValue property.",
+
+      "samples": {
+        "simple": {
+          "title": "A simple ToggleButton with text content.",
+          "checkbox": "Disable ToggleButton",
+          "content": "ToggleButton"
+        }
+      },
+
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "SplitButton": {
+      "short_desc": "A two-part button that displays a flyout when its secondary part is clicked.",
+      "long_desc": "The SplitButton is a dropdown button, but with an addition execution hit target.",
+
+      "samples": {
+        "with_text": {
+          "title": "A SplitButton with text",
+          "content": "Choose color"
+        }
+      },
+
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "ToggleSplitButton": {
+      "short_desc": "A version of the SplitButton where the activation target toggles on/off.",
+      "long_desc": "A version of the SplitButton where the activation target toggles on/off.",
+
+      "samples": {
+        "number_box": {
+          "title": "Using ToggleSplitButton to control type of TextBox.",
+          "content": "Type here...",
+          "items": [
+            "RedEye",
+            "Lock"
+          ]
+        }
+      },
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "CheckBox": {
+      "short_desc": "A control that a user can select or clear.",
+      "long_desc": "CheckBox controls let the user select a combination of binary options. In contrast, RadioButton controls allow the user to select from mutually exclusive options. The indeterminate state is used to indicate that an option is set for some, but not all, child options. Don't allow users to set an indeterminate state directly to indicate a third option.",
+
+      "samples": {
+        "two_state": {
+          "title": "A 2-state CheckBox.",
+          "content": "Two-state CheckBox"
+        },
+        "three_state": {
+          "title": "A 3-state CheckBox.",
+          "content": "Three-state CheckBox"
+        },
+
+        "using_three_state": {
+          "title": "Using a 3-state CheckBox",
+          "top_label": "Select all",
+          "sub_label": "Option {{index}}"
+        }
+      },
+
+      "related": [
+        "RadioButton",
+        "ToggleSwitch",
+        "ToggleButton"
+      ]
+    },
+    "RadioButton": {
+      "short_desc": "A control that allows a user to select a single option from a group of options.",
+      "long_desc": "Use RadioButtons to let a user choose between mutually exclusive, related options. Generally contained within a RadioButtons group control.",
+
+      "samples": {
+        "default": {
+          "title": "A group of RadioButton controls in a RadioButtons group.",
+          "sub_title": "Options:",
+          "sub_label": "Option {{index}}",
+          "selected_option": "You selected Option {{index}}"
+        }
+      },
+
+      "related": [
+        "CheckBox",
+        "RadioButtons",
+        "ToggleSwitch",
+        "ToggleButton"
+      ]
+    },
+    "Slider": {
+      "short_desc": "A control that lets the user select from a range of values by moving a Thumb control along a track.",
+      "long_desc": "Use a Slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).",
+      "samples": {
+        "simple": {
+          "title": "A simple Slider."
+        },
+        "custom_props": {
+          "title": "A slider with range and steps specified.",
+          "header": "Control header"
+        }
+      },
+      "related": []
+    },
+    "ToggleSwitch": {
+      "short_desc": "A switch that can be toggled between 2 states.",
+      "long_desc": "Use ToggleSwitch controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label.",
+      "samples": {
+        "simple": {
+          "title": "A simple ToggleSwitch.",
+          "checkbox": "Disable toggle switch"
+        },
+
+        "custom_props": {
+          "title": "A ToggleSwitch with custom header and content",
+          "content": {
+            "off": "Do work",
+            "on": "Working"
+          },
+          "header": "Toggle work"
+        }
+      },
+      "related": [
+        "ToggleButton",
+        "RadioButton",
+        "CheckBox"
+      ]
+    }
+  },
+  "Collections": {
+    "GridView": {
+      "short_desc": "A control that presents a collection of items in rows and columns.",
+      "long_desc": "The GridView lets you show a collection of items arranged in rows and columns that scroll horizontally.",
+
+      "samples": {
+        "default": {
+          "title": "GridView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "ListView"
+      ]
+    },
+    "ListView": {
+      "short_desc": "A control that presents a collection of items in a vertical list.",
+      "long_desc": "The ListView lets you show a collection of items in a list that scrolls vertically.",
+      "samples": {
+        "default": {
+          "title": "ListView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "GridView",
+        "TreeView"
+      ]
+    },
+    "TreeView": {
+      "short_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
+      "long_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
+      "samples": {
+        "default": {
+          "title": "TreeView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "GridView",
+        "ListView"
+      ]
+    }
+  },
+  "DialogsAndFlyouts": {
+    "ContentDialog": {
+      "short_desc": "A dialog box that can be customized to contain any content.",
+      "long_desc": "Use a ContentDialog to show relevant information or to provide a modal dialog experience that can show any content.",
+
+      "samples": {
+        "default": {
+          "title": "A basic ContentDialog with content.",
+
+          "content": "Show Dialog",
+
+          "dialog": {
+            "title": "Save your work?",
+            "description": "Lorem ipsum dolor sit amet, adipisicing elit.",
+            "checkbox": "Upload your content to the cloud.",
+
+            "save": {
+              "label": "Save",
+              "value": "User saved their work"
+            },
+            "dontSave": {
+              "label": "Don't save",
+              "value": "User didn't save their work"
+            },
+            "cancel": {
+              "label": "Cancel",
+              "value": "User cancelled the dialog"
+            }
+          }
+        }
+      },
+      "related": [
+        "Flyout",
+        "Tooltip"
+      ]
+    },
+    "Flyout": {
+      "short_desc": "Shows contextual information and enables user interaction.",
+      "long_desc": "A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it. Use it to collect input from the user, show more details about an item, or ask the user to confirm an action.",
+
+      "samples": {
+        "default": {
+          "title": "A button with Flyout",
+
+          "button_text": "Empty cart",
+          "flyout_content": "All items will be removed. Do you want to continue?",
+          "flyout_button": "Yes, empty my cart"
+        }
+      },
+      "related": [
+        "ContentDialog",
+        "Button"
+      ]
+    }
+  },
+  "Navigation": {
+    "NavigationView": {
+      "short_desc": "Common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+      "long_desc": "The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+
+      "samples": {
+        "simple": {
+          "title": "Simple NavigationView",
+          "backVisible": "Is Back button visible",
+          "backEnabled": "Is Back button enabled",
+
+          "settingsVisible": "Is Settings button visible",
+          "settingsEnabled": "Is Settings button enabled",
+
+          "items": {
+            "menu": [
+              { "label": "Browse", "icon": "Library" },
+              { "label": "Track an Order", "icon": "Map" },
+              { "label": "Order History", "icon": "Tag" }
+            ],
+
+            "footer": [
+              { "label": "Account", "icon": "Contact" },
+              { "label": "Your cart", "icon": "Shop" },
+              { "label": "Help", "icon": "Help" }
+            ]
+          },
+
+          "header": "This is Header Text",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+      },
+      "related": []
+    }
+  },
+  "StatusAndInfo": {
+    "InfoBadge": {
+      "short_desc": "An non-intrusive UI to display notifications or bring focus to an area",
+      "long_desc": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
+      "related": [
+        "InfoBar"
+      ],
+      "samples": {
+        "different_styles": {
+          "title": "Different InfoBadge styles",
+          "header": "Styles",
+          "styles": [
+            { "label": "Critical", "value": "critical" },
+            { "label": "Attention", "value": "attention" },
+            { "label": "Informational", "value": "informational" },
+            { "label": "Success", "value": "success" }
+          ]
+        },
+        "another_control": {
+          "title": "Placing an InfoBadge inside another control."
+        },
+
+        "dynamic_value": {
+          "title": "InfoBadge with dynamic value",
+          "header": "InfoBadge Value"
+        }
+      }
+    },
+    "InfoBar": {
+      "short_desc": "An inline message to display app-wide status change information",
+      "long_desc": "Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.",
+
+      "samples": {
+        "default": {
+          "title": "InfoBar API in action",
+          "styles": [
+            { "label": "Critical", "value": "critical" },
+            { "label": "Attention", "value": "attention" },
+            { "label": "Informational", "value": "informational" },
+            { "label": "Success", "value": "success" }
+          ],
+          "short_message": "Essential app message for your users to be informed of, acknowledge, or take action on.",
+          "long_message": "A long essential app message for your users to be informed of, acknowledge, or take action on. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus dolor vitae justo rutrum, ut lobortis nibh mattis. Aenean id elit commodo, semper felis nec.",
+          "checkboxes": {
+            "open": "Is open",
+            "iconVisible": "Is icon visible",
+            "closable": "Is closable"
+          },
+          "headers": {
+            "severity": "Severity",
+            "length": "Message length"
+          }
+        }
+      },
+
+      "related": [
+        "ContentDialog"
+      ]
+    },
+    "ProgressBar": {
+      "short_desc": "Shows the apps progress on a task, or that the app is performing ongoing work that doesn't block user interaction.",
+      "long_desc": "The ProgressBar has two different visual representations:\\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\\nDeterminate - shows how much progress has been made on a known amount of work.",
+      "samples": {
+        "indeterminate": {
+          "title": "An indeterminate progress bar.",
+          "header": "Progress state",
+          "states": [
+            { "label": "Running", "value": "running" },
+            { "label": "Paused", "value": "paused" },
+            { "label": "Error", "value": "error" }
+          ]
+        },
+
+        "determinate": {
+          "title": "A determinate progress bar.",
+          "header": "Progress"
+        }
+      },
+
+      "related": [
+        "ProgressRing"
+      ]
+    },
+    "ProgressRing": {
+      "short_desc": "Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.",
+      "long_desc": "The ProgressRing has two different visual representations:\\nIndeterminate - shows that a task is ongoing, but blocks user interaction.\\nDeterminate - shows how much progress has been made on a known amount of work.",
+
+      "samples": {
+        "indeterminate": {
+          "title": "An indeterminate progress ring.",
+          "header": "Toggle work",
+          "on": "Working",
+          "off": "Do work"
+        },
+        "determinate": {
+          "title": "A determinate progress ring",
+          "header": "Progress"
+        }
+      }
+    },
+    "Tooltip": {
+      "short_desc": "Displays information for an element in a pop-up window.",
+      "long_desc": "A Tooltip shows more information about a UI element. You might show information about what the element does, or what the user should do. The Tooltip is shown when a user hovers over or presses and holds the UI element.",
+
+      "simple": {
+        "title": "A button with a simple Tooltip",
+        "text": "Button with a simple Tooltip"
+      },
+      "related": [
+        "Flyout",
+        "ContentDialog"
+      ]
+    }
+  },
+  "Text": {
+    "NumberBox": {
+      "short_desc": "A text control used for numeric input and evaluation of algebraic equations.",
+      "long_desc": "Use NumberBox to allow users to enter algebraic equations and numeric input in your app.",
+      "samples": {
+        "spin_button": {
+          "title": "A NumberBox with a spin button.",
+          "header": "Enter an integer:",
+          "radio_header": "SpinButton placement",
+          "radios": [
+            { "label": "Inline", "value": "inline" },
+            { "label": "Compact", "value": "compact" }
+          ]
+        }
+      },
+
+      "related": [
+        "TextBox",
+        "TextBlock"
+      ]
+    },
+    "TextBox": {
+      "short_desc": "A single-line or multi-line plain text field.",
+      "long_desc": "Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for, and you can customize it in other ways.",
+
+      "samples": {
+        "simple": {
+          "title": "A simple TextBox with a header and placeholder text",
+
+          "header": "Enter your name:",
+          "placeholder": "Name"
+        },
+
+        "password": {
+          "title": "TextBox with type=\"password\"",
+          "header": "Password",
+          "placeholder": "Enter your password"
+        }
+      },
+
+      "related": [
+        "NumberBox",
+        "TextBlock"
+      ]
+    },
+    "TextBlock": {
+      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+
+      "simple": {
+        "title": "Types of TextBlock:",
+        "types": [
+          { "label": "Caption TextBlock", "type": "caption" },
+          { "label": "Body TextBlock", "type": "body" },
+          { "label": "Body strong TextBlock", "type": "body-strong" },
+          { "label": "Body large TextBlock", "type": "body-large" }
+        ]
+      },
+
+      "related": [
+        "NumberBox",
+        "TitleBlock",
+        "TextBox"
+      ]
+    },
+    "TitleBlock": {
+      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+
+      "simple": {
+        "title": "Types of TitleBlock:",
+        "types": [
+          { "label": "Subtitle TitleBlock", "type": "subtitle" },
+          { "label": "Title TitleBlock", "type": "title" },
+          { "label": "Title large TitleBlock", "type": "title-large" },
+          { "label": "Display TitleBlock", "type": "display" }
+        ]
+      },
+
+      "related": [
+        "NumberBox",
+        "TextBlock",
+        "TextBox"
+      ]
+    }
+  }
+}
