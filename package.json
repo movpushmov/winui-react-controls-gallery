@@ -20,7 +20,7 @@
     "react-syntax-highlighter": "^15.4.4",
     "typescript": "^4.4.3",
     "web-vitals": "^1.1.2",
-    "winui-react": "^1.0.0"
+    "winui-react": "^1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

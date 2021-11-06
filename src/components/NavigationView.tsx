@@ -16,23 +16,23 @@ export const NavigationBar = (): React.ReactElement => {
 
 	return (
 		<div>
-			<NavigationView onSelect={selectHandler}>
-				<NavigationViewItem title="Basic Input" value="basicInput" icon={IconType.CheckboxComposite}>
-					<NavigationViewItem title="Button" value="button"/>
-					<NavigationViewItem title="DropdownButton" value="dropDownButton"/>
+			<NavigationView onSelect={selectHandler} style={{ position: 'sticky' }}>
+				<NavigationViewItem title="Basic Input" value="/basicInput" icon={IconType.CheckboxComposite}>
+					<NavigationViewItem title="Button" value="/basicInput/button"/>
+					<NavigationViewItem title="DropdownButton" value="/basicInput/dropDownButton"/>
 				</NavigationViewItem>
 				<NavigationViewItem title="Collections" value="collections" icon={IconType.GridView}>
-					<NavigationViewItem title="GridView" value="gridView"/>
-					<NavigationViewItem title="ListView" value="listView"/>
-					<NavigationViewItem title="TreeView" value="treeView"/>
+					<NavigationViewItem title="GridView" value="/collections/gridView"/>
+					<NavigationViewItem title="ListView" value="/collections/listView"/>
+					<NavigationViewItem title="TreeView" value="/collections/treeView"/>
 				</NavigationViewItem>
-				<NavigationViewItem title="Dialogs and Flyouts" value="dialogsAndFlyouts" icon={IconType.Comment}>
-					<NavigationViewItem title="ContentDialog" value="contentDialog"/>
-					<NavigationViewItem title="Flyout" value="flyout"/>
+				<NavigationViewItem title="Dialogs and Flyouts" value="/dialogsAndFlyouts" icon={IconType.Comment}>
+					<NavigationViewItem title="ContentDialog" value="/dialogsAndFlyouts/contentDialog"/>
+					<NavigationViewItem title="Flyout" value="/dialogsAndFlyouts/flyout"/>
 				</NavigationViewItem>
-				<NavigationViewItem title="Navigation" value="navigation" icon={IconType.GlobalNavButton}>
-					<NavigationViewItem title="BreadcrumbBar" value="breadcrumbBar"/>
-					<NavigationViewItem title="NavigationView" value="navigationView"/>
+				<NavigationViewItem title="Navigation" value="/navigation" icon={IconType.GlobalNavButton}>
+					<NavigationViewItem title="BreadcrumbBar" value="/navigation/breadcrumbBar"/>
+					<NavigationViewItem title="NavigationView" value="/navigation/navigationView"/>
 				</NavigationViewItem>
 				<NavigationViewItem title="Status and info" value="statusAndInfo" icon={IconType.ActionCenter}>
 					<NavigationViewItem title="InfoBadge" value="infoBadge"/>

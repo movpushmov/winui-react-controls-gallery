@@ -1,38 +1,39 @@
 import React, { useCallback, useState } from 'react'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
-import { useTranslation } from 'react-i18next'
+import { TFunction, useTranslation } from 'react-i18next'
 import { Button, CheckBox, CheckBoxState, TextBlock, TitleBlock } from 'winui-react'
 import styles from './styles.module.css'
 
+const simpleButtonCode = (t: TFunction<'translation'>, disabled: boolean): string => `
+<Button disabled={${disabled.toString()}}>${t('BasicInput.Button.samples.text_content.content')}</Button>
+`
+
 export const ButtonPage = (): React.ReactElement => {
 	const { t } = useTranslation()
-	const [disabled, setDisabled] = useState(CheckBoxState.Unchecked)
+	const [state, setState] = useState(CheckBoxState.Unchecked)
 
-	const checkboxHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.currentTarget.value)
+	const checkboxHandler = useCallback((s: CheckBoxState) => {
+		console.log(s)
+		setState(s)
 	}, [])
 
 	return (
 		<div className={styles['sub-page-container']}>
-			<TitleBlock type="title-large">Button</TitleBlock>
+			<TitleBlock type="title" style={{ margin: 0 }}>Button</TitleBlock>
 			<TextBlock>{t('BasicInput.Button.long_desc')}</TextBlock>
 
 			<CodeExample
 				title={t('BasicInput.Button.samples.text_content.title')}
-				code={`
-					<Button disabled={${disabled === CheckBoxState.Unchecked ? 'false' : 'true'}}>
-						${t('BasicInput.Button.samples.text_content.content')}
-					</Button>
-				`}
+				code={simpleButtonCode(t, state === CheckBoxState.Checked)}
 				rightBlock={
 					<CheckBox
-						onChange={checkboxHandler}
+						onCheck={checkboxHandler}
 						content={t('BasicInput.Button.samples.text_content.checkbox')}
 					/>
 				}
 			>
-				<Button disabled={disabled !== CheckBoxState.Unchecked}>
-					${t('BasicInput.Button.samples.text_content.content')}
+				<Button disabled={state === CheckBoxState.Checked}>
+					{t('BasicInput.Button.samples.text_content.content')}
 				</Button>
 			</CodeExample>
 		</div>

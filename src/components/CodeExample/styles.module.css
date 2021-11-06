@@ -1,4 +1,36 @@
 .main-block {
     display: flex;
     flex-direction: column;
+    border: 1px solid #EAEAEA;
+
+    border-radius: 8px;
+}
+
+.example-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #F3F3F3;
+    padding: 16px;
+
+    border-radius: 8px 8px 0 0;
+}
+
+.right-block {
+    padding: 12px;
+
+    border-radius: 8px;
+    background-color: #FBFBFB;
+
+    margin-left: auto;
+}
+
+.code-block {
+    background-color: #F7F7F7 !important;
+    margin: 0;
+    padding: 8px !important;
+
+    border-radius: 0 0 8px 8px;
+    border-top: 1px solid #EAEAEA;
 }

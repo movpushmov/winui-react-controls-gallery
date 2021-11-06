@@ -17,24 +17,29 @@ export const CodeExample = (props: CodeExampleProps): React.ReactElement => {
 	const theme = useTheme()
 
 	return (
-		<div className={styles['main-block']}>
+		<>
 			<TitleBlock>{props.title}</TitleBlock>
 
-			<div className={styles['example-block']}>
-				<div className={styles['example']}>
-					{props.children}
+			<div className={styles['main-block']}>
+				<div className={styles['example-block']}>
+					<div className={styles['example']}>
+						{props.children}
+					</div>
+					{props.rightBlock &&
+					<div className={styles['right-block']}>
+						{props.rightBlock}
+					</div>
+					}
 				</div>
-				{props.rightBlock &&
-				<div className={styles['right-block']}>
-					{props.rightBlock}
-				</div>
-				}
+				{/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+				<SyntaxHighlighter style={theme === 'dark' ? atomOneDark : atomOneLight}
+					language="jsx"
+					className={styles['code-block']}
+				>
+					{props.code}
+				</SyntaxHighlighter>
 			</div>
-			{/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
-			<SyntaxHighlighter language="typescript" style={theme === 'dark' ? atomOneDark : atomOneLight}>
-				{props.code}
-			</SyntaxHighlighter>
-		</div>
+		</>
 	)
 }
 
