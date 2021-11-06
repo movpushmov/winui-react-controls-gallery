@@ -1,22 +1,22 @@
 {
   "BasicInput": {
     "Button": {
-      "short_desc": "A control that responds to user input and raises a Click event.",
-      "long_desc": "The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look.",
+      "short_desc": "Компонент, отвечающий вводу пользователя и вызывающий событие нажатие.",
+      "long_desc": "Кнопка контроля обеспечивает событие "клик", чтобы отреагировать на пользовательский ввод. Такой как, касание, мышка, клавиатура, стилус и другие виды девайсов ввода. Вы можете поместить много разного контента в "кнопку", например текст или изображение. Либо вы можете изменить дизайн "кнопки", чтобы придать ей новый вид.",
 
       "samples": {
         "text_content": {
-          "title": "A simple Button with text content.",
-          "checkbox": "Disable button",
-          "content": "Standard React button"
+          "title": "Простая кнопка с текстовым контентом.",
+          "checkbox": "Выключить кнопку.",
+          "content": "Кнопка стандартной реакции."
         },
         "large_content": {
-          "title": "Wrapping Buttons with large content.",
-          "content": "This is some text that is too long and will get cut off"
+          "title": "Кнопка заворачивания с крупным контентом.",
+          "content": "Этот текст слишком длинный и он будет обрезан."
         },
         "accent_styled": {
-          "title": "Accent style applied to Button.",
-          "content": "Accent style button"
+          "title": "Пользовательский стиль применяемый к кнопке.",
+          "content": "Кнопка пользовательского цвета."
         }
       },
 
@@ -27,8 +27,8 @@
       ]
     },
     "DropDownButton": {
-      "short_desc": "A button that displays a flyout of choices when clicked.",
-      "long_desc": "A control that drops down a flyout of choices from which one can be chosen.",
+      "short_desc": "Кнопка, которая при нажатии показывает всплывающее окно с выбором.",
+      "long_desc": "Компонент, который демонстрирует выпадающим списком во всплывающем окне, с возможным выбором одного из них ",
 
       "samples": {
         "simple": {
@@ -62,14 +62,14 @@
       ]
     },
     "HyperlinkButton": {
-      "short_desc": "A button that appears as hyperlink text, and can navigate to a URI or handle a Click event.",
-      "long_desc": "A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the child <Link> component from react-router-dom or <a> from HTML.",
+      "short_desc": "Кнопка, которая появляется в качестве гиперссылки и может переместить к URL, либо обрабатывает событие “клик”.",
+      "long_desc": "Кнопка Гиперссылки появляется в качестве текстовой гиперссылки. Когда пользователь кликает по ней, тот открывает страницу, которую вы указали в дочернем <Link> компоненте из react-router-dom или <a> из HTML.",
 
       "samples": {
         "uri": {
-          "title": "A hyperlink button that navigates to a URI",
-          "checkbox": "Disable hyperlink button",
-          "content": "WinUI React home page"
+          "title": "Гиперссылка, которая перемещает по ссылке.",
+          "checkbox": "Выключить гиперссылки",
+          "content": "WinUI React домашняя страница"
         }
       },
 
@@ -80,14 +80,14 @@
       ]
     },
     "ToggleButton": {
-      "short_desc": "A button that can be switched between two states like a CheckBox.",
-      "long_desc": "A ToggleButton looks like a Button, but works like a CheckBox. It typically has two states, checked (on) or unchecked (off). You can determine it's state by checking the value or defaultValue property.",
+      "short_desc": "Кнопка, которая может сменить положение между двумя положениями, как CheckBox.",
+      "long_desc": "Кнопка переключения выглядит как кнопка, но работает как CheckBox. Она обычно имеет два положения, проверенное (вкл) или не проверенное (выкл). Это состояние можно определить при помощи проверки значения или свойства стандартного значения.",
 
       "samples": {
         "simple": {
-          "title": "A simple ToggleButton with text content.",
-          "checkbox": "Disable ToggleButton",
-          "content": "ToggleButton"
+          "title": "Простая кнопка переключения с текстовым контентом.",
+          "checkbox": "выключить кнопка переключения.",
+          "content": "Кнопка переключения"
         }
       },
 
@@ -98,8 +98,8 @@
       ]
     },
     "SplitButton": {
-      "short_desc": "A two-part button that displays a flyout when its secondary part is clicked.",
-      "long_desc": "The SplitButton is a dropdown button, but with an addition execution hit target.",
+      "short_desc": "Кнопка, состоящая из двух частей, которая показывает всплывающее окно, когда вторая часть была нажата.",
+      "long_desc": "Кнопка разделения – это кнопка выпадающего списка, но с добавлением исполнения попадания в цель.",
 
       "samples": {
         "with_text": {
