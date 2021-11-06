@@ -2,12 +2,11 @@ import React from 'react'
 import styles from './styles.module.css'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import {useTheme} from "../../utils/useTheme";
+import { useTheme } from '../../utils/useTheme'
+import { TitleBlock } from 'winui-react'
 
 interface CodeExampleProps {
-	className?: string
-	style?: React.CSSProperties
-
+	title?: string
 	code?: string
 
 	rightBlock?: React.ReactNode
@@ -16,21 +15,24 @@ interface CodeExampleProps {
 
 export const CodeExample = (props: CodeExampleProps): React.ReactElement => {
 	const theme = useTheme()
-	
+
 	return (
 		<div className={styles['main-block']}>
-			<div>
-				<div>
+			<TitleBlock>{props.title}</TitleBlock>
+
+			<div className={styles['example-block']}>
+				<div className={styles['example']}>
 					{props.children}
 				</div>
 				{props.rightBlock &&
-				<div>
+				<div className={styles['right-block']}>
 					{props.rightBlock}
 				</div>
 				}
 			</div>
-			<SyntaxHighlighter language="typescript" style={}>
-
+			{/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+			<SyntaxHighlighter language="typescript" style={theme === 'dark' ? atomOneDark : atomOneLight}>
+				{props.code}
 			</SyntaxHighlighter>
 		</div>
 	)
