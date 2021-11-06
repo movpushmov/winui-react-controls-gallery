@@ -101,9 +101,12 @@
       "short_desc": "A two-part button that displays a flyout when its secondary part is clicked.",
       "long_desc": "The SplitButton is a dropdown button, but with an addition execution hit target.",
 
-      "samples": [
-
-      ],
+      "samples": {
+        "with_text": {
+          "title": "A SplitButton with text",
+          "content": "Choose color"
+        }
+      },
 
       "related": [
         "Button",
@@ -111,10 +114,115 @@
         "CheckBox"
       ]
     },
-    "ToggleSplitButton": {},
-    "CheckBox": {},
-    "RadioButton": {},
-    "Slider": {},
-    "ToggleSwitch": {}
-  }
+    "ToggleSplitButton": {
+      "short_desc": "A version of the SplitButton where the activation target toggles on/off.",
+      "long_desc": "A version of the SplitButton where the activation target toggles on/off.",
+
+      "samples": {
+        "number_box": {
+          "title": "Using ToggleSplitButton to control type of TextBox.",
+          "content": "Type here...",
+          "items": [
+            "RedEye",
+            "Lock"
+          ]
+        }
+      },
+      "related": [
+        "Button",
+        "ToggleSwitch",
+        "CheckBox"
+      ]
+    },
+    "CheckBox": {
+      "short_desc": "A control that a user can select or clear.",
+      "long_desc": "CheckBox controls let the user select a combination of binary options. In contrast, RadioButton controls allow the user to select from mutually exclusive options. The indeterminate state is used to indicate that an option is set for some, but not all, child options. Don't allow users to set an indeterminate state directly to indicate a third option.",
+
+      "samples": {
+        "two_state": {
+          "title": "A 2-state CheckBox.",
+          "content": "Two-state CheckBox"
+        },
+        "three_state": {
+          "title": "A 3-state CheckBox.",
+          "content": "Three-state CheckBox"
+        },
+
+        "using_three_state": {
+          "title": "Using a 3-state CheckBox",
+          "top_label": "Select all",
+          "sub_label": "Option {{index}}"
+        }
+      },
+
+      "related": [
+        "RadioButton",
+        "ToggleSwitch",
+        "ToggleButton"
+      ]
+    },
+    "RadioButton": {
+      "short_desc": "A control that allows a user to select a single option from a group of options.",
+      "long_desc": "Use RadioButtons to let a user choose between mutually exclusive, related options. Generally contained within a RadioButtons group control.",
+
+      "samples": {
+        "default": {
+          "title": "A group of RadioButton controls in a RadioButtons group.",
+          "sub_title": "Options:",
+          "sub_label": "Option {{index}}",
+          "selected_option": "You selected Option {{index}}"
+        }
+      },
+
+      "related": [
+        "CheckBox",
+        "RadioButtons",
+        "ToggleSwitch",
+        "ToggleButton"
+      ]
+    },
+    "Slider": {
+      "short_desc": "A control that lets the user select from a range of values by moving a Thumb control along a track.",
+      "long_desc": "Use a Slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).",
+      "samples": {
+        "simple": {
+          "title": "A simple Slider."
+        },
+        "custom_props": {
+          "title": "A slider with range and steps specified.",
+          "header": "Control header"
+        }
+      },
+      "related": []
+    },
+    "ToggleSwitch": {
+      "short_desc": "A switch that can be toggled between 2 states.",
+      "long_desc": "Use ToggleSwitch controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label.",
+      "samples": {
+        "simple": {
+          "title": "A simple ToggleSwitch.",
+          "checkbox": "Disable toggle switch"
+        },
+
+        "custom_props": {
+          "title": "A ToggleSwitch with custom header and content",
+          "content": {
+            "off": "Do work",
+            "on": "Working"
+          },
+          "header": "Toggle work"
+        }
+      },
+      "related": [
+        "ToggleButton",
+        "RadioButton",
+        "CheckBox"
+      ]
+    }
+  },
+  "collections": {},
+  "dialogs_and_flyouts": {},
+  "navigation": {},
+  "status_and_info": {},
+  "text": {}
 }
