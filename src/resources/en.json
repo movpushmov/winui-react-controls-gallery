@@ -220,9 +220,359 @@
       ]
     }
   },
-  "collections": {},
-  "dialogs_and_flyouts": {},
-  "navigation": {},
-  "status_and_info": {},
-  "text": {}
+  "collections": {
+    "GridView": {
+      "short_desc": "A control that presents a collection of items in rows and columns.",
+      "long_desc": "The GridView lets you show a collection of items arranged in rows and columns that scroll horizontally.",
+
+      "samples": {
+        "default": {
+          "title": "GridView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "ListView"
+      ]
+    },
+    "ListView": {
+      "short_desc": "A control that presents a collection of items in a vertical list.",
+      "long_desc": "The ListView lets you show a collection of items in a list that scrolls vertically.",
+      "samples": {
+        "default": {
+          "title": "ListView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "GridView",
+        "TreeView"
+      ]
+    },
+    "TreeView": {
+      "short_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
+      "long_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
+      "samples": {
+        "default": {
+          "title": "TreeView API in Action",
+
+          "mode": "SelectionMode",
+          "modes": [
+            { "label": "None", "value": "none" },
+            { "label": "Single", "value": "single" },
+            { "label": "Multiply", "value": "multiply" }
+          ]
+        }
+      },
+
+      "related": [
+        "GridView",
+        "ListView"
+      ]
+    }
+  },
+  "dialogs_and_flyouts": {
+    "ContentDialog": {
+      "short_desc": "A dialog box that can be customized to contain any content.",
+      "long_desc": "Use a ContentDialog to show relevant information or to provide a modal dialog experience that can show any content.",
+
+      "samples": {
+        "default": {
+          "title": "A basic ContentDialog with content.",
+
+          "content": "Show Dialog",
+
+          "dialog": {
+            "title": "Save your work?",
+            "description": "Lorem ipsum dolor sit amet, adipisicing elit.",
+            "checkbox": "Upload your content to the cloud.",
+
+            "save": {
+              "label": "Save",
+              "value": "User saved their work"
+            },
+            "dontSave": {
+              "label": "Don't save",
+              "value": "User didn't save their work"
+            },
+            "cancel": {
+              "label": "Cancel",
+              "value": "User cancelled the dialog"
+            }
+          }
+        }
+      },
+      "related": [
+        "Flyout",
+        "Tooltip"
+      ]
+    },
+    "Flyout": {
+      "short_desc": "Shows contextual information and enables user interaction.",
+      "long_desc": "A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it. Use it to collect input from the user, show more details about an item, or ask the user to confirm an action.",
+
+      "samples": {
+        "default": {
+          "title": "A button with Flyout",
+
+          "button_text": "Empty cart",
+          "flyout_content": "All items will be removed. Do you want to continue?",
+          "flyout_button": "Yes, empty my cart"
+        }
+      },
+      "related": [
+        "ContentDialog",
+        "Button"
+      ]
+    }
+  },
+  "navigation": {
+    "NavigationView": {
+      "short_desc": "Common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+      "long_desc": "The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+
+      "samples": {
+        "simple": {
+          "title": "Simple NavigationView",
+          "backVisible": "Is Back button visible",
+          "backEnabled": "Is Back button enabled",
+
+          "settingsVisible": "Is Settings button visible",
+          "settingsEnabled": "Is Settings button enabled",
+
+          "items": {
+            "menu": [
+              { "label": "Browse", "icon": "Library" },
+              { "label": "Track an Order", "icon": "Map" },
+              { "label": "Order History", "icon": "Tag" }
+            ],
+
+            "footer": [
+              { "label": "Account", "icon": "Contact" },
+              { "label": "Your cart", "icon": "Shop" },
+              { "label": "Help", "icon": "Help" }
+            ]
+          },
+
+          "header": "This is Header Text",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+      },
+      "related": []
+    }
+  },
+  "status_and_info": {
+    "InfoBadge": {
+      "short_desc": "An non-intrusive UI to display notifications or bring focus to an area",
+      "long_desc": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
+      "related": [
+        "InfoBar"
+      ],
+      "samples": {
+        "different_styles": {
+          "title": "Different InfoBadge styles",
+          "header": "Styles",
+          "styles": [
+            { "label": "Critical", "value": "critical" },
+            { "label": "Attention", "value": "attention" },
+            { "label": "Informational", "value": "informational" },
+            { "label": "Success", "value": "success" }
+          ]
+        },
+        "another_control": {
+          "title": "Placing an InfoBadge inside another control."
+        },
+
+        "dynamic_value": {
+          "title": "InfoBadge with dynamic value",
+          "header": "InfoBadge Value"
+        }
+      }
+    },
+    "InfoBar": {
+      "short_desc": "An inline message to display app-wide status change information",
+      "long_desc": "Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.",
+
+      "samples": {
+        "default": {
+          "title": "InfoBar API in action",
+          "styles": [
+            { "label": "Critical", "value": "critical" },
+            { "label": "Attention", "value": "attention" },
+            { "label": "Informational", "value": "informational" },
+            { "label": "Success", "value": "success" }
+          ],
+          "short_message": "Essential app message for your users to be informed of, acknowledge, or take action on.",
+          "long_message": "A long essential app message for your users to be informed of, acknowledge, or take action on. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus dolor vitae justo rutrum, ut lobortis nibh mattis. Aenean id elit commodo, semper felis nec.",
+          "checkboxes": {
+            "open": "Is open",
+            "iconVisible": "Is icon visible",
+            "closable": "Is closable"
+          },
+          "headers": {
+            "severity": "Severity",
+            "length": "Message length"
+          }
+        }
+      },
+
+      "related": [
+        "ContentDialog"
+      ]
+    },
+    "ProgressBar": {
+      "short_desc": "Shows the apps progress on a task, or that the app is performing ongoing work that doesn't block user interaction.",
+      "long_desc": "The ProgressBar has two different visual representations:\\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\\nDeterminate - shows how much progress has been made on a known amount of work.",
+      "samples": {
+        "indeterminate": {
+          "title": "An indeterminate progress bar.",
+          "header": "Progress state",
+          "states": [
+            { "label": "Running", "value": "running" },
+            { "label": "Paused", "value": "paused" },
+            { "label": "Error", "value": "error" }
+          ]
+        },
+
+        "determinate": {
+          "title": "A determinate progress bar.",
+          "header": "Progress"
+        }
+      },
+
+      "related": [
+        "ProgressRing"
+      ]
+    },
+    "ProgressRing": {
+      "short_desc": "Shows the apps progress on a task, or that the app is performing ongoing work that does block user interaction.",
+      "long_desc": "The ProgressRing has two different visual representations:\\nIndeterminate - shows that a task is ongoing, but blocks user interaction.\\nDeterminate - shows how much progress has been made on a known amount of work.",
+
+      "samples": {
+        "indeterminate": {
+          "title": "An indeterminate progress ring.",
+          "header": "Toggle work",
+          "on": "Working",
+          "off": "Do work"
+        },
+        "determinate": {
+          "title": "A determinate progress ring",
+          "header": "Progress"
+        }
+      }
+    },
+    "Tooltip": {
+      "short_desc": "Displays information for an element in a pop-up window.",
+      "long_desc": "A Tooltip shows more information about a UI element. You might show information about what the element does, or what the user should do. The Tooltip is shown when a user hovers over or presses and holds the UI element.",
+
+      "simple": {
+        "title": "A button with a simple Tooltip",
+        "text": "Button with a simple Tooltip"
+      },
+      "related": [
+        "Flyout",
+        "ContentDialog"
+      ]
+    }
+  },
+  "text": {
+    "NumberBox": {
+      "short_desc": "A text control used for numeric input and evaluation of algebraic equations.",
+      "long_desc": "Use NumberBox to allow users to enter algebraic equations and numeric input in your app.",
+      "samples": {
+        "spin_button": {
+          "title": "A NumberBox with a spin button.",
+          "header": "Enter an integer:",
+          "radio_header": "SpinButton placement",
+          "radios": [
+            { "label": "Inline", "value": "inline" },
+            { "label": "Compact", "value": "compact" }
+          ]
+        }
+      },
+
+      "related": [
+        "TextBox",
+        "TextBlock"
+      ]
+    },
+    "TextBox": {
+      "short_desc": "A single-line or multi-line plain text field.",
+      "long_desc": "Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for, and you can customize it in other ways.",
+
+      "samples": {
+        "simple": {
+          "title": "A simple TextBox with a header and placeholder text",
+
+          "header": "Enter your name:",
+          "placeholder": "Name"
+        },
+
+        "password": {
+          "title": "TextBox with type=\"password\"",
+          "header": "Password",
+          "placeholder": "Enter your password"
+        }
+      },
+
+      "related": [
+        "NumberBox",
+        "TextBlock"
+      ]
+    },
+    "TextBlock": {
+      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+
+      "simple": {
+        "title": "Types of TextBlock:",
+        "types": [
+          { "label": "Caption TextBlock", "type": "caption" },
+          { "label": "Body TextBlock", "type": "body" },
+          { "label": "Body strong TextBlock", "type": "body-strong" },
+          { "label": "Body large TextBlock", "type": "body-large" }
+        ]
+      },
+
+      "related": [
+        "NumberBox",
+        "TitleBlock",
+        "TextBox"
+      ]
+    },
+    "TitleBlock": {
+      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+
+      "simple": {
+        "title": "Types of TitleBlock:",
+        "types": [
+          { "label": "Subtitle TitleBlock", "type": "subtitle" },
+          { "label": "Title TitleBlock", "type": "title" },
+          { "label": "Title large TitleBlock", "type": "title-large" },
+          { "label": "Display TitleBlock", "type": "display" }
+        ]
+      },
+
+      "related": [
+        "NumberBox",
+        "TextBlock",
+        "TextBox"
+      ]
+    }
+  }
 }
