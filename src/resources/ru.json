@@ -103,8 +103,8 @@
 
       "samples": {
         "with_text": {
-          "title": "A SplitButton with text",
-          "content": "Choose color"
+          "title": "Кнопка разделения с текстом",
+          "content": "Выберите цвет"
         }
       },
 
@@ -115,13 +115,13 @@
       ]
     },
     "ToggleSplitButton": {
-      "short_desc": "A version of the SplitButton where the activation target toggles on/off.",
-      "long_desc": "A version of the SplitButton where the activation target toggles on/off.",
+      "short_desc": "Версия Кнопки разделения, в которой цель активации переключается на вкл/выкл.",
+      "long_desc": "Версия Кнопки разделения, в которой цель активации переключается на вкл/выкл.",
 
       "samples": {
         "number_box": {
-          "title": "Using ToggleSplitButton to control type of TextBox.",
-          "content": "Type here...",
+          "title": "Используя Кнопку разделения, чтобы контролировать тип TextBox",
+          "content": "Печатайте здесь...",
           "items": [
             "RedEye",
             "Lock"
@@ -135,23 +135,23 @@
       ]
     },
     "CheckBox": {
-      "short_desc": "A control that a user can select or clear.",
-      "long_desc": "CheckBox controls let the user select a combination of binary options. In contrast, RadioButton controls allow the user to select from mutually exclusive options. The indeterminate state is used to indicate that an option is set for some, but not all, child options. Don't allow users to set an indeterminate state directly to indicate a third option.",
+      "short_desc": "Компонент, который позволяет пользователю выбрать или очистить.",
+      "long_desc": "Компоненты CheckBox позволяют пользователю выбрать комбинацию двоичных вариантов. На контрасте, компонент RadioButton позволяет пользователю выбрать из взаимоисключающих вариантов. Неопределённое состояние показывает, что параметр установлен для некоторых, но не всех, дочерних вариантов. Не допускайте пользователей устанавливать неопределённое состояние напрямую, чтобы показать третий параметр.",
 
       "samples": {
         "two_state": {
-          "title": "A 2-state CheckBox.",
-          "content": "Two-state CheckBox"
+          "title": "CheckBox из двух состояний.",
+          "content": "двусоставный CheckBox "
         },
         "three_state": {
-          "title": "A 3-state CheckBox.",
-          "content": "Three-state CheckBox"
+          "title": "CheckBox из трёх состояний.",
+          "content": "Трёхсоставный CheckBox"
         },
 
         "using_three_state": {
-          "title": "Using a 3-state CheckBox",
-          "top_label": "Select all",
-          "sub_label": "Option {{index}}"
+          "title": "Используя трёхсоставный CheckBox",
+          "top_label": "Выбрать всё",
+          "sub_label": "Вариант {{index}}"
         }
       },
 
@@ -162,15 +162,15 @@
       ]
     },
     "RadioButton": {
-      "short_desc": "A control that allows a user to select a single option from a group of options.",
-      "long_desc": "Use RadioButtons to let a user choose between mutually exclusive, related options. Generally contained within a RadioButtons group control.",
+      "short_desc": "Компонент, который позволяет пользователю выбрать единственный вариант из группы вариантов.",
+      "long_desc": "Используйте RadioButtons чтобы дать пользователю возможность выбрать из двух связанных взаимоисключающих вариантов. Обычно содержится внутри группового компонента RadioButtons.",
 
       "samples": {
         "default": {
-          "title": "A group of RadioButton controls in a RadioButtons group.",
-          "sub_title": "Options:",
-          "sub_label": "Option {{index}}",
-          "selected_option": "You selected Option {{index}}"
+          "title": "Группа из компонентов RadioButton в группе RadioButtons",
+          "sub_title": "Варианты:",
+          "sub_label": "Вариант {{index}}",
+          "selected_option": "Вы выбрали вариант {{index}}"
         }
       },
 
@@ -182,26 +182,26 @@
       ]
     },
     "Slider": {
-      "short_desc": "A control that lets the user select from a range of values by moving a Thumb control along a track.",
-      "long_desc": "Use a Slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).",
+      "short_desc": "Компонент, который позволяет пользователю выбрать диапазон ценностей, благодаря компоненту Thumb контролировать вдоль пути.",
+      "long_desc": "Используйте Slider, где вы хотите, чтобы пользователь был в состоянии установить определённые, смежные величины (такие как звук или яркость) или диапазон дискретных величин (таких как разрешение экрана).",
       "samples": {
         "simple": {
-          "title": "A simple Slider."
+          "title": "Простой Slider."
         },
         "custom_props": {
-          "title": "A slider with range and steps specified.",
-          "header": "Control header"
+          "title": "Slider с диапазоном и указанными шагами.",
+          "header": "Компонент header"
         }
       },
       "related": []
     },
     "ToggleSwitch": {
-      "short_desc": "A switch that can be toggled between 2 states.",
-      "long_desc": "Use ToggleSwitch controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label.",
+      "short_desc": "Переключатель, который может принимать два положения.",
+      "long_desc": "Используйте компонент ToggleSwitch, чтобы представить пользователю с полностью взаимоисключающими вариантам (как вкл/выкл), где выбранный вариант следует в немедленную фиксацию. ToggleSwitch должен иметь только одну метку.",
       "samples": {
         "simple": {
-          "title": "A simple ToggleSwitch.",
-          "checkbox": "Disable toggle switch"
+          "title": "Простой ToggleSwitcs",
+          "checkbox": "Отключённый ToggleSwitch"
         },
 
         "custom_props": {
