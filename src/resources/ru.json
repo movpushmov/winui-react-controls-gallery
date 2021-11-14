@@ -191,7 +191,7 @@
       ]
     },
     "Slider": {
-      "short_desc": "Компонент, который позволяет пользователю выбрать диапазон ценностей, благодаря компоненту Thumb контролировать вдоль пути.",
+      "short_desc": "Компонент, который позволяет выбрать из диапазона значений, использую компонент Thumb по заданному пути.",
       "long_desc": "Используйте Slider, где вы хотите, чтобы пользователь был в состоянии установить определённые, смежные величины (такие как звук или яркость) или диапазон дискретных величин (таких как разрешение экрана).",
       "samples": {
         "simple": {
@@ -214,7 +214,7 @@
         },
 
         "custom_props": {
-          "title": "A ToggleSwitch with custom header and content",
+          "title": "ToggleSwitch с кастомным заголовком и содержанием",
           "content": {
             "off": "Do work",
             "on": "Working"
@@ -231,12 +231,12 @@
   },
   "Collections": {
     "GridView": {
-      "short_desc": "A control that presents a collection of items in rows and columns.",
-      "long_desc": "The GridView lets you show a collection of items arranged in rows and columns that scroll horizontally.",
+      "short_desc": "Компонент, который показывает набор элементов в строках и колонках.",
+      "long_desc": "GridView даёт вам показать набор элементов в строках и колонках, которые прокручиваются горизонтально.",
 
       "samples": {
         "default": {
-          "title": "GridView API in Action",
+          "title": "GridView API в действии",
 
           "mode": "SelectionMode",
           "modes": [
@@ -252,11 +252,11 @@
       ]
     },
     "ListView": {
-      "short_desc": "A control that presents a collection of items in a vertical list.",
-      "long_desc": "The ListView lets you show a collection of items in a list that scrolls vertically.",
+      "short_desc": "Компонент, который показывает набор элементов в вертикальном списке ",
+      "long_desc": "ListView даёт вам показать набор элементов в списке, которые прокручиваются вертикально .",
       "samples": {
         "default": {
-          "title": "ListView API in Action",
+          "title": "ListView API в действии",
 
           "mode": "SelectionMode",
           "modes": [
@@ -273,11 +273,11 @@
       ]
     },
     "TreeView": {
-      "short_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
-      "long_desc": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items.",
+      "short_desc": "Компонент TreeView – это иерархический список шаблонов с расширяющимися и разрушающимися узлами, которые содержат вложенные элементы.",
+      "long_desc": Компонент TreeView – это иерархический список шаблонов с расширяющимися и разрушающимися узлами, которые содержат вложенные элементы.",
       "samples": {
         "default": {
-          "title": "TreeView API in Action",
+          "title": "TreeView API в действии",
 
           "mode": "SelectionMode",
           "modes": [
@@ -296,31 +296,31 @@
   },
   "DialogsAndFlyouts": {
     "ContentDialog": {
-      "short_desc": "A dialog box that can be customized to contain any content.",
-      "long_desc": "Use a ContentDialog to show relevant information or to provide a modal dialog experience that can show any content.",
+      "short_desc": "Диалоговое окно, которые может быть изменено чтобы иметь какой-либо содержание.",
+      "long_desc": "Используйте ContentDialog, чтобы показать актуальную информацию или предоставить модальное окно, которое может показать любое содержание.",
 
       "samples": {
         "default": {
-          "title": "A basic ContentDialog with content.",
+          "title": "Базовый ContentDialog с содержанием.",
 
-          "content": "Show Dialog",
+          "content": "Показать окно",
 
           "dialog": {
-            "title": "Save your work?",
+            "title": "Сохранить вашу работу?",
             "description": "Lorem ipsum dolor sit amet, adipisicing elit.",
-            "checkbox": "Upload your content to the cloud.",
+            "checkbox": "Выложить вашу работу в облако.",
 
             "save": {
-              "label": "Save",
-              "value": "User saved their work"
+              "label": "Сохранить",
+              "value": "Пользователь сохранил свою работу"
             },
             "dontSave": {
-              "label": "Don't save",
-              "value": "User didn't save their work"
+              "label": "Не сохранять",
+              "value": "Пользователь не сохранил свою работу"
             },
             "cancel": {
-              "label": "Cancel",
-              "value": "User cancelled the dialog"
+              "label": "Отмена",
+              "value": "Пользователь отменил окно"
             }
           }
         }
@@ -331,16 +331,16 @@
       ]
     },
     "Flyout": {
-      "short_desc": "Shows contextual information and enables user interaction.",
-      "long_desc": "A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it. Use it to collect input from the user, show more details about an item, or ask the user to confirm an action.",
+      "short_desc": "Показать контекстную информацию и разрешить пользователю с ней взаимодействовать.",
+      "long_desc": "Flyout показывает облегчённый пользовательский интерфейс, который либо с информацией, либо с требованием пользовательской интеракции. В отличие от окна, Flyout может быть отклонён, с помощью нажатия или касания кнопки выкл. Используйте это, чтобы собрать ввод пользователя, показывайте больше деталей элементов или просите пользователя подтвердить действие.",
 
       "samples": {
         "default": {
-          "title": "A button with Flyout",
+          "title": "Кнопка с Flyout",
 
-          "button_text": "Empty cart",
-          "flyout_content": "All items will be removed. Do you want to continue?",
-          "flyout_button": "Yes, empty my cart"
+          "button_text": "Пустая корзина",
+          "flyout_content": "Все элементы будут убраны из корзины. Хотите продолжить?",
+          "flyout_button": "Да, очистите мою корзину"
         }
       },
       "related": [
@@ -351,17 +351,17 @@
   },
   "Navigation": {
     "NavigationView": {
-      "short_desc": "Common vertical layout for top-level areas of your app via a collapsible navigation menu.",
-      "long_desc": "The navigation view control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+      "short_desc": "кет.",
+      "long_desc": "Стандартный вертикальный макет для важнейших областей вашего приложения с коллапсирующим навигационным меню.",
 
       "samples": {
         "simple": {
           "title": "Simple NavigationView",
-          "backVisible": "Is Back button visible",
-          "backEnabled": "Is Back button enabled",
+          "backVisible": "Кнопка Back видна",
+          "backEnabled": "Кнопка Back включена",
 
-          "settingsVisible": "Is Settings button visible",
-          "settingsEnabled": "Is Settings button enabled",
+          "settingsVisible": "Кнопка Settings видна",
+          "settingsEnabled": "Кнопка Settings вкючена",
 
           "items": {
             "menu": [
@@ -377,7 +377,7 @@
             ]
           },
 
-          "header": "This is Header Text",
+          "header": "Это заголовок текста",
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         }
       },
@@ -386,8 +386,8 @@
   },
   "StatusAndInfo": {
     "InfoBadge": {
-      "short_desc": "An non-intrusive UI to display notifications or bring focus to an area",
-      "long_desc": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
+      "short_desc": "Не навязчивый пользовательский интерфейс, который показывает уведомления или фокусируется на области",
+      "long_desc": "Badging - не навязчивый и интуитивный способ показывать уведомления или фокусироваться на области в приложении. Будь оно уведомлениями, указывающие нового содержания или показывая тревогу.",
       "related": [
         { "title": "InfoBar", "category": "statusAndInfo" }
       ],
@@ -527,16 +527,16 @@
 
       "samples": {
         "simple": {
-          "title": "A simple TextBox with a header and placeholder text",
+          "title": "Простой TextBox с оглавлениями и заполнителями текста",
 
-          "header": "Enter your name:",
-          "placeholder": "Name"
+          "header": "Введите своё имя:",
+          "placeholder": "Имя"
         },
 
         "password": {
           "title": "TextBox with type=\"password\"",
-          "header": "Password",
-          "placeholder": "Enter your password"
+          "header": "Пароль",
+          "placeholder": "Введите свой пароль:"
         }
       },
 
@@ -546,8 +546,8 @@
       ]
     },
     "TextBlock": {
-      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
-      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "short_desc": "Компонент, который показывает форматированный текст, гиперссылки, встроенные изображения и другой рич-контент.",
+      "long_desc": "Компонент, который показывает форматированный текст, гиперссылки, встроенные изображения и другой рич-контент.",
 
       "simple": {
         "title": "Types of TextBlock:",
@@ -566,8 +566,8 @@
       ]
     },
     "TitleBlock": {
-      "short_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
-      "long_desc": "A control that displays formatted text, hyperlinks, inline images, and other rich content.",
+      "short_desc": "Компонент, который показывает форматированный текст, гиперссылки, встроенные изображения и другой рич-контент.",
+      "long_desc": "Компонент, который показывает форматированный текст, гиперссылки, встроенные изображения и другой рич-контент.",
 
       "simple": {
         "title": "Types of TitleBlock:",
