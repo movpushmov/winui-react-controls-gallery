@@ -1,4 +1,16 @@
 {
+  "footer": {
+    "sourcePage": {
+      "title": "View page on GitHub",
+      "desc": "React source code"
+    },
+    "relatedControls": "Related controls",
+    "feedback": {
+      "title": "Feedback",
+      "desc": "Send feedback about this page"
+    }
+  },
+
   "BasicInput": {
     "Button": {
       "short_desc": "A control that responds to user input and raises a Click event.",
@@ -21,9 +33,8 @@
       },
 
       "related": [
-        "ToggleButton",
-        "RepeatButton",
-        "HyperlinkButton"
+        { "title": "ToggleButton", "category": "basicInput" },
+        { "title": "HyperlinkButton", "category": "basicInput" }
       ]
     },
     "DropDownButton": {
@@ -54,11 +65,10 @@
       },
 
       "related": [
-        "SplitButton",
-        "ToggleSplitButton",
-        "ToggleButton",
-        "RepeatButton",
-        "HyperlinkButton"
+        { "title": "SplitButton", "category": "basicInput" },
+        { "title": "ToggleSplitButton", "category": "basicInput" },
+        { "title": "ToggleButton", "category": "basicInput" },
+        { "title": "HyperlinkButton", "category": "basicInput" }
       ]
     },
     "HyperlinkButton": {
@@ -74,9 +84,8 @@
       },
 
       "related": [
-        "Button",
-        "ToggleButton",
-        "RepeatButton"
+        { "title": "Button", "category": "basicInput" },
+        { "title": "ToggleButton", "category": "basicInput" }
       ]
     },
     "ToggleButton": {
@@ -92,9 +101,9 @@
       },
 
       "related": [
-        "Button",
-        "ToggleSwitch",
-        "CheckBox"
+        { "title": "Button", "category": "basicInput" },
+        { "title": "ToggleSwitch", "category": "basicInput" },
+        { "title": "CheckBox", "category": "basicInput" }
       ]
     },
     "SplitButton": {
@@ -109,9 +118,9 @@
       },
 
       "related": [
-        "Button",
-        "ToggleSwitch",
-        "CheckBox"
+        { "title": "Button", "category": "basicInput" },
+        { "title": "ToggleSwitch", "category": "basicInput" },
+        { "title": "CheckBox", "category": "basicInput" }
       ]
     },
     "ToggleSplitButton": {
@@ -129,9 +138,9 @@
         }
       },
       "related": [
-        "Button",
-        "ToggleSwitch",
-        "CheckBox"
+        { "title": "Button", "category": "basicInput" },
+        { "title": "ToggleSwitch", "category": "basicInput" },
+        { "title": "CheckBox", "category": "basicInput" }
       ]
     },
     "CheckBox": {
@@ -156,9 +165,9 @@
       },
 
       "related": [
-        "RadioButton",
-        "ToggleSwitch",
-        "ToggleButton"
+        { "title": "RadioButton", "category": "basicInput" },
+        { "title": "ToggleSwitch", "category": "basicInput" },
+        { "title": "ToggleButton", "category": "basicInput" }
       ]
     },
     "RadioButton": {
@@ -175,10 +184,10 @@
       },
 
       "related": [
-        "CheckBox",
-        "RadioButtons",
-        "ToggleSwitch",
-        "ToggleButton"
+        { "title": "CheckBox", "category": "basicInput" },
+        { "title": "RadioButton", "category": "basicInput" },
+        { "title": "ToggleSwitch", "category": "basicInput" },
+        { "title": "ToggleButton", "category": "basicInput" }
       ]
     },
     "Slider": {
@@ -214,9 +223,9 @@
         }
       },
       "related": [
-        "ToggleButton",
-        "RadioButton",
-        "CheckBox"
+        { "title": "ToggleButton", "category": "basicInput" },
+        { "title": "RadioButton", "category": "basicInput" },
+        { "title": "CheckBox", "category": "basicInput" }
       ]
     }
   },
@@ -239,7 +248,7 @@
       },
 
       "related": [
-        "ListView"
+        { "title": "ListView", "category": "collections" }
       ]
     },
     "ListView": {
@@ -259,8 +268,8 @@
       },
 
       "related": [
-        "GridView",
-        "TreeView"
+        { "title": "ListView", "category": "collections" },
+        { "title": "GridView", "category": "collections" }
       ]
     },
     "TreeView": {
@@ -280,8 +289,8 @@
       },
 
       "related": [
-        "GridView",
-        "ListView"
+        { "title": "ListView", "category": "collections" },
+        { "title": "GridView", "category": "collections" }
       ]
     }
   },
@@ -317,8 +326,8 @@
         }
       },
       "related": [
-        "Flyout",
-        "Tooltip"
+        { "title": "Flyout", "category": "dialogsAndFlyouts" },
+        { "title": "Tooltip", "category": "dialogsAndFlyouts" }
       ]
     },
     "Flyout": {
@@ -335,8 +344,8 @@
         }
       },
       "related": [
-        "ContentDialog",
-        "Button"
+        { "title": "ContentDialog", "category": "dialogsAndFlyouts" },
+        { "title": "Button", "category": "basicInput" }
       ]
     }
   },
@@ -380,7 +389,7 @@
       "short_desc": "An non-intrusive UI to display notifications or bring focus to an area",
       "long_desc": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
       "related": [
-        "InfoBar"
+        { "title": "InfoBar", "category": "statusAndInfo" }
       ],
       "samples": {
         "different_styles": {
@@ -431,7 +440,7 @@
       },
 
       "related": [
-        "ContentDialog"
+        { "title": "ContentDialog", "category": "dialogsAndFlyouts" }
       ]
     },
     "ProgressBar": {
@@ -455,7 +464,7 @@
       },
 
       "related": [
-        "ProgressRing"
+        { "title": "ProgressRing", "category": "statusAndInfo" }
       ]
     },
     "ProgressRing": {
@@ -473,7 +482,9 @@
           "title": "A determinate progress ring",
           "header": "Progress"
         }
-      }
+      },
+
+      "related": []
     },
     "Tooltip": {
       "short_desc": "Displays information for an element in a pop-up window.",
@@ -484,8 +495,8 @@
         "text": "Button with a simple Tooltip"
       },
       "related": [
-        "Flyout",
-        "ContentDialog"
+        { "title": "Flyout", "category": "dialogsAndFlyouts" },
+        { "title": "ContentDialog", "category": "dialogsAndFlyouts" }
       ]
     }
   },
@@ -506,8 +517,8 @@
       },
 
       "related": [
-        "TextBox",
-        "TextBlock"
+        { "title": "TextBox", "category": "text" },
+        { "title": "TextBlock", "category": "text" }
       ]
     },
     "TextBox": {
@@ -530,8 +541,8 @@
       },
 
       "related": [
-        "NumberBox",
-        "TextBlock"
+        { "title": "NumberBox", "category": "text" },
+        { "title": "TextBlock", "category": "text" }
       ]
     },
     "TextBlock": {
@@ -549,9 +560,9 @@
       },
 
       "related": [
-        "NumberBox",
-        "TitleBlock",
-        "TextBox"
+        { "title": "NumberBox", "category": "text" },
+        { "title": "TitleBlock", "category": "text" },
+        { "title": "TextBox", "category": "text" }
       ]
     },
     "TitleBlock": {
@@ -569,9 +580,9 @@
       },
 
       "related": [
-        "NumberBox",
-        "TextBlock",
-        "TextBox"
+        { "title": "NumberBox", "category": "text" },
+        { "title": "TextBlock", "category": "text" },
+        { "title": "TextBox", "category": "text" }
       ]
     }
   }

@@ -101,8 +101,7 @@
 
     "promise/prefer-await-to-then": "error",
 
-
-
+    "sonarjs/no-duplicate-string": "off",
 
     "optimize-regex/optimize-regex": "warn",
 

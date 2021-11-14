@@ -1,0 +1,22 @@
+.footer-container {
+    display: grid;
+    margin-top: 48px;
+}
+
+@media (max-width: 640px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 800px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.link {
+    width: fit-content;
+
+    margin: 8px 0;
+}
