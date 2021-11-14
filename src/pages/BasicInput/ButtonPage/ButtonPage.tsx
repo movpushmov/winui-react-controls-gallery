@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { TFunction, useTranslation } from 'react-i18next'
-import { Button, CheckBox, CheckBoxState, TextBlock, TitleBlock } from 'winui-react'
+import { Button, CheckBox, CheckBoxState, TextBlock, TitleBlock } from '../../../lib'
 import styles from './styles.module.css'
 import { Footer } from '../../../components/Footer/Footer'
 

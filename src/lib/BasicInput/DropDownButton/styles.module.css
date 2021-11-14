@@ -1,0 +1,33 @@
+.dropdown {
+    position: relative;
+    user-select: none;
+}
+
+.dropdown-button:active:not(:disabled)>span {
+    margin-top: -2px;
+}
+
+@keyframes Icon-Animation {
+    0% {
+        margin-top: 0;
+    }
+
+    20% {
+        margin-top: -2px;
+    }
+
+    70% {
+        margin-top: 4px;
+    }
+
+    100% {
+        margin-top: 0;
+    }
+}
+
+.animate-icon>span {
+    animation-duration: .3s;
+    animation-name: Icon-Animation;
+}
+
+

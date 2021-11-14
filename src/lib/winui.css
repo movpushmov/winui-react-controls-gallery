@@ -1,0 +1,291 @@
+body {
+    --accent-color: #005FB8;
+    --accent-color-secondary: rgba(0, 95, 184, .9); /* #005FB8 with alpha 90% */
+    --accent-color-tertiary: rgba(0, 95, 184, .8); /* #005FB8 with alpha 80% */
+    --accent-color-disabled: rgba(0, 0, 0, .2169);
+    --accent-color-selected-text-background: #0078D4;
+
+    --text-color-primary: rgba(0, 0, 0, .8956);
+    --text-color-secondary: rgba(0, 0, 0, .6063);
+    --text-color-tertiary: rgba(0, 0, 0, .4458);
+    --text-color-disabled: rgba(0, 0, 0, .3614);
+
+    --accent-text-color-primary: #003E92;
+    --accent-text-color-secondary: #001A68;
+    --accent-text-color-tertiary: #005FB8;
+    --accent-text-color-disabled: rgba(0, 0, 0, .3614);
+
+    --font-size-caption: 12px;
+    --font-size-body: 14px;
+    --font-size-body-large: 18px;
+    --font-size-subtitle: 20px;
+    --font-size-title: 28px;
+    --font-size-title-large: 40px;
+    --font-size-display: 68px;
+
+    --fill-color-transparent: transparent;
+    --fill-color-default: rgba(255, 255, 255, .7);
+    --fill-color-secondary: rgba(255, 255, 255, .5);
+    --fill-color-tertiary: rgba(255, 255, 255, .3);
+    --fill-color-disabled: rgba(255, 255, 255, .3);
+    --fill-color-input-active: rgb(255, 255, 255);
+
+    --fill-color-control-default: rgba(255, 255, 255, .7);
+    --fill-color-control-secondary: rgba(249, 249, 249, .5);
+    --fill-color-control-tertiary: rgba(249, 249, 249, .3);
+    --fill-color-control-input-active: #FFFFFF;
+    --fill-color-control-disabled: rgba(249, 249, 249, .3);
+    --fill-color-control-transparent: transparent;
+
+    --fill-control-alt-transparent: transparent;
+    --fill-control-alt-disabled: rgba(255, 255, 255, 0);
+    --fill-control-alt-secondary: rgba(0, 0, 0, .1);
+    --fill-control-alt-tertiary: rgba(255, 255, 255, .0419);
+    --fill-control-alt-quarternary: rgba(0, 0, 0, .0924);
+
+    --text-on-accent-color-primary: #FFFFFF;
+    --text-on-accent-color-secondary: rgba(255, 255, 255, .7);
+    --text-on-accent-color-disabled: #FFFFFF;
+    --text-on-accent-color-selected: #FFFFFF;
+
+    --stroke-color-default: rgba(117, 117, 117, .4);
+    --stroke-color-flyout: rgba(0, 0, 0, .0578);
+
+    --control-stroke-default: rgba(0, 0, 0, .0578);
+    --control-stroke-on-accent-tertiary: rgba(0, 0, 0, .2169);
+
+
+    --surface-stroke-default: rgba(117, 117, 117, .4);
+    --surface-stroke-flyout: rgba(0, 0, 0, .0578);
+
+    --card-stroke-default: rgba(0, 0, 0, .0578);
+    --card-stroke-default-solid: #EBEBEB;
+
+    --card-background-default: rgba(255, 255, 255, .7);
+    --card-background-secondary: rgba(246, 246, 246, .5);
+
+    --smoke-background: rgba(0, 0, 0, .3);
+
+    --fill-color-subtle-primary: rgba(255, 255, 255, 0);
+    --fill-color-subtle-secondary: rgba(0, 0, 0, .0373);
+    --fill-color-subtle-tertiary: rgba(0, 0, 0, .0241);
+    --fill-color-subtle-disabled: rgba(0, 0, 0, 0);
+
+    --fill-color-control-strong-default: rgba(0, 0, 0, .4458);
+    --fill-color-control-strong-disabled: rgba(0, 0, 0, .2169);
+
+    --fill-control-on-image-default: rgba(255, 255, 255, .79);
+    --fill-control-on-image-secondary: #F3F3F3;
+    --fill-control-on-image-tertiary: #EBEBEB;
+    --fill-control-on-image-disabled: rgba(255, 255, 255, 0);
+
+    --system-critical: #C42B1C;
+    --system-success: #0F7B0F;
+    --system-attention: #005FB7;
+    --system-caution: #9D5D00;
+    --system-neutral: rgba(0, 0, 0, .4458);
+    --system-solid-neutral: #8A8A8A;
+
+    --infobar-critical: #FDE7E9;
+    --infobar-success: #DFF6DD;
+    --infobar-attention: rgba(246, 246, 246, .5);
+    --infobar-solid-attention: #F7F7F7;
+    --infobar-caution: #FFF4CE;
+    --infobar-neutral: rgba(0, 0, 0, .0241);
+    --infobar-solid-neutral: #EEEEEE;
+
+    --noise-image-url: url('./noise.png');
+    --fill-color-acrylic-base: rgb(243, 243, 243);
+    --fill-color-acrylic-default: rgb(252, 252, 252);
+
+    --elevation-circle: rgba(0,0,0,0.0578);
+
+    --fill-control-solid: #FFFFFF;
+
+    --fill-color-solid-background-base: #F3F3F3;
+    --fill-color-solid-background-secondary: #EEEEEE;
+    --fill-color-solid-background-tertiary: #F9F9F9;
+    --fill-color-solid-background-quarternary: #FFFFFF;
+
+    /* Special styles */
+    --slider-disabled-thumb-color: var(--accent-color-disabled);
+    --noise-image: url("./noise.png");
+
+    background-color: #FAFAFA;
+    color: var(--text-color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --accent-color: #60CDFF;
+        --accent-color-secondary: rgba(96, 205, 255, .9); /* #005FB8 with alpha 90% */
+        --accent-color-tertiary: rgba(96, 205, 255, .8); /* #005FB8 with alpha 80% */
+        --accent-color-disabled: rgba(255, 255, 255, .1581);
+        --accent-color-selected-text-background: #0078D4;
+
+        --text-color-primary: rgba(255, 255, 255, .8956);
+        --text-color-secondary: rgba(255, 255, 255, .786);
+        --text-color-tertiary: rgba(255, 255, 255, .5442);
+        --text-color-disabled: rgba(255, 255, 255, .3628);
+
+        --accent-text-color-primary: #99EBFF;
+        --accent-text-color-secondary: #99EBFF;
+        --accent-text-color-tertiary: #60CDFF;
+        --accent-text-color-disabled: rgba(255, 255, 255, .3628);
+
+        --fill-color-transparent: transparent;
+        --fill-color-default: rgba(255, 255, 255, .0605);
+        --fill-color-secondary: rgba(255, 255, 255, .0837);
+        --fill-color-tertiary: rgba(255, 255, 255, .0326);
+        --fill-color-disabled: rgba(255, 255, 255, .0419);
+        --fill-color-input-active: rgba(30, 30, 30, .7);
+
+        --text-on-accent-color-primary: #000000;
+        --text-on-accent-color-secondary: rgba(0, 0, 0, .5);
+        --text-on-accent-color-disabled: rgba(255, 255, 255, .5302);
+        --text-on-accent-color-selected: #FFFFFF;
+
+        --fill-color-subtle-primary: rgba(255, 255, 255, 0);
+        --fill-color-subtle-secondary: rgba(255, 255, 255, .0605);
+        --fill-color-subtle-tertiary: rgba(255, 255, 255, .0419);
+        --fill-color-subtle-disabled: rgba(255, 255, 255, 0);
+
+        --fill-color-control-default: rgba(255, 255, 255, .0605);
+        --fill-color-control-secondary: rgba(255, 255, 255, .0837);
+        --fill-color-control-tertiary: rgba(255, 255, 255, .0326);
+        --fill-color-control-input-active: rgba(30, 30, 30, .7);
+        --fill-color-control-disabled: rgba(255, 255, 255, .0419);
+        --fill-color-control-transparent: transparent;
+
+        --fill-control-alt-transparent: transp  arent;
+        --fill-control-alt-disabled: rgba(255, 255, 255, 0);
+        --fill-control-alt-secondary: rgba(0, 0, 0, .1);
+        --fill-control-alt-tertiary: rgba(255, 255, 255, .0419);
+        --fill-control-alt-quarternary: rgba(255, 255, 255, .0698);
+
+        --stroke-color-default: rgba(117, 117, 117, .4);
+        --stroke-color-flyout: rgba(0, 0, 0, .2);
+
+        --control-stroke-default: rgba(255, 255, 255, .0698);
+        --control-stroke-on-accent-tertiary: rgba(0, 0, 0, .2169);
+
+        --card-stroke-default: rgba(0, 0, 0, .1);
+        --card-stroke-default-solid: #1C1C1C;
+
+        --surface-stroke-default: rgba(117, 117, 117, .4);
+        --surface-stroke-flyout: rgba(0, 0, 0, .2);
+
+
+        --card-background-default: rgba(255, 255, 255, .0512);
+        --card-background-secondary: rgba(255, 255, 255, .0326);
+
+        --fill-color-control-strong-default: rgba(255, 255, 255, .5442);
+        --fill-color-control-strong-disabled: rgba(255, 255, 255, .1581);
+
+        --fill-control-on-image-default: rgba(28, 28, 28, .7);
+        --fill-control-on-image-secondary: #1A1A1A;
+        --fill-control-on-image-tertiary: #131313;
+        --fill-control-on-image-disabled: rgba(30, 30, 30, 0);
+
+        --system-critical: #FF99A4;
+        --system-success: #6CCB5F;
+        --system-attention: #60CDFF;
+        --system-caution: #FCE100;
+        --system-neutral: rgba(255, 255, 255, .5442);
+        --system-solid-neutral: #8A8A8A;
+
+        --infobar-critical: #442726;
+        --infobar-success: #393D1B;
+        --infobar-attention: rgba(255, 255, 255, .0326);
+        --infobar-solid-attention: #2E2E2E;
+        --infobar-caution: #433519;
+        --infobar-neutral: rgba(255, 255, 255, .0326);
+        --infobar-solid-neutral: #2E2E2E;
+
+        --fill-color-acrylic-base: rgb(44, 44, 44);
+        --fill-color-acrylic-default: rgb(44, 44, 44);
+
+        --elevation-circle: rgba(255, 255, 255, 0.0698);
+
+        --fill-control-solid: #454545;
+
+        --fill-color-solid-background-base: #202020;
+        --fill-color-solid-background-secondary: #1C1C1C;
+        --fill-color-solid-background-tertiary: #282828;
+        --fill-color-solid-background-quarternary: #2C2C2C;
+
+        /* Special styles */
+        --slider-disabled-thumb-color: var(--accent-color-tertiary);
+
+        background-color: #1C1C1C;
+    }
+}
+
+.winui-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+}
+
+.winui-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4458);
+
+    border-radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .winui-scrollbar::-webkit-scrollbar:hover {
+        background:
+                linear-gradient(0deg, rgba(44, 44, 44, 0.15), rgba(44, 44, 44, 0.15)), rgba(44, 44, 44, 0.96);
+    }
+
+    .winui-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5442);
+    }
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Display';
+    font-weight: 300; /* light */
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Display-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe Fluent Icons';
+
+    src: url("./fonts/Segoe Fluent Icons.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Display';
+    font-weight: normal;
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Display.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Display';
+    font-weight: bold;
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Display-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Small';
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Small.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Text';
+    font-weight: normal;
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Text.ttf");
+}
+
+@font-face {
+    font-family: 'Segoe UI Variable Text';
+    font-weight: bold;
+
+    src: url("./fonts/Segoe-UI-Variable-Static-Text-Semibold.ttf");
+}

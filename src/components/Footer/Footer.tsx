@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
-import { HyperlinkButton, TitleBlock } from 'winui-react'
+import { HyperlinkButton, TitleBlock } from '../../lib'
 import { useTranslation } from 'react-i18next'
 
 import { Link } from 'react-router-dom'
@@ -59,7 +59,7 @@ export const Footer = (props: FooterProps): React.ReactElement => {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href={props.sourcePageCodeURL}
+						href="https://github.com/movpushmov/winui-react-controls-gallery/issues/new/choose"
 					>
 						{t('footer.feedback.desc')}
 					</a>

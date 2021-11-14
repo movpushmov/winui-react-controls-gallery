@@ -3,7 +3,7 @@ import styles from './styles.module.css'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight'
 import { atomOneDark, atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import { useTheme } from '../../utils/useTheme'
-import { TitleBlock } from 'winui-react'
+import { TitleBlock } from '../../lib'
 
 interface CodeExampleProps {
 	title?: string

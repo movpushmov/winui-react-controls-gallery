@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
-import { IconType, NavigationView, NavigationViewItem } from 'winui-react'
-import { NavigationViewSelectEvent } from 'winui-react/Navigation/NavigationView/NavigationView'
 import { useHistory, useLocation } from 'react-router'
+import { NavigationView, NavigationViewSelectEvent } from '../lib/Navigation/NavigationView/NavigationView'
+import { NavigationViewItem, IconType } from '../lib'
 
 interface NavigationViewProps {
 	setIsOpen: (value: boolean) => void
@@ -26,6 +26,8 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 
 	return (
 		<NavigationView
+			backButtonVisible={false}
+			open={true}
 			selectedValue={path !== '/settings' ? path : 'settings'}
 			onSelect={selectHandler}
 			onPaneToggle={setIsOpen}
@@ -33,6 +35,14 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 			<NavigationViewItem title="Basic Input" value="/basicInput" icon={IconType.CheckboxComposite}>
 				<NavigationViewItem title="Button" value="/basicInput/Button"/>
 				<NavigationViewItem title="DropdownButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="HyperlinkButton" value="/basicInput/HyperlinkButton"/>
+				<NavigationViewItem title="ToggleButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="SplitButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="ToggleSplitButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="CheckBox" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="RadioButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="Slider" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="ToggleSwitch" value="/basicInput/DropDownButton"/>
 			</NavigationViewItem>
 			<NavigationViewItem title="Collections" value="collections" icon={IconType.GridView}>
 				<NavigationViewItem title="GridView" value="/collections/GridView"/>

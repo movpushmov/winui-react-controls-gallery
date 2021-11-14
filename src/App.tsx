@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import 'winui-react/winui.css'
-import 'winui-react/main.css'
+import './lib/winui.css'
 import { NavigationBar } from './components/NavigationView'
 import { Route, Switch } from 'react-router'
 import { useTranslation } from 'react-i18next'
@@ -8,7 +7,7 @@ import { ButtonPage } from './pages/BasicInput/ButtonPage/ButtonPage'
 
 function App(): React.ReactElement {
 	const { t } = useTranslation()
-	const [open, setIsOpen] = useState(false)
+	const [open, setIsOpen] = useState(true)
 
 	// margin: 32px 48px;
 
