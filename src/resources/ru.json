@@ -351,7 +351,7 @@
   },
   "Navigation": {
     "NavigationView": {
-      "short_desc": "кет.",
+      "short_desc": "Макет.",
       "long_desc": "Стандартный вертикальный макет для важнейших областей вашего приложения с коллапсирующим навигационным меню.",
 
       "samples": {
@@ -393,8 +393,8 @@
       ],
       "samples": {
         "different_styles": {
-          "title": "Different InfoBadge styles",
-          "header": "Styles",
+          "title": "Разные стили InfoBadge",
+          "header": "Стили",
           "styles": [
             { "label": "Critical", "value": "critical" },
             { "label": "Attention", "value": "attention" },
@@ -407,34 +407,34 @@
         },
 
         "dynamic_value": {
-          "title": "InfoBadge with dynamic value",
-          "header": "InfoBadge Value"
+          "title": "InfoBadge с динамическим значением",
+          "header": "Значени InfoBadge"
         }
       }
     },
     "InfoBar": {
-      "short_desc": "An inline message to display app-wide status change information",
-      "long_desc": "Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.",
+      "short_desc": "Встраиваемое сообщение показывает изменение статуса для всего приложения",
+      "long_desc": "Используйте компонент InfoBar, когда пользователь должен быть проинформирован о подтверждении или действовать на изменение статуса приложения. Изначально уведомления будут оставаться в области содержимого, пока не будут закрыты пользователем, но не будут неизбежно ломать пользовательский поток данных.",
 
       "samples": {
         "default": {
-          "title": "InfoBar API in action",
+          "title": "InfoBar API в действии",
           "styles": [
             { "label": "Critical", "value": "critical" },
             { "label": "Attention", "value": "attention" },
             { "label": "Informational", "value": "informational" },
             { "label": "Success", "value": "success" }
           ],
-          "short_message": "Essential app message for your users to be informed of, acknowledge, or take action on.",
-          "long_message": "A long essential app message for your users to be informed of, acknowledge, or take action on. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus dolor vitae justo rutrum, ut lobortis nibh mattis. Aenean id elit commodo, semper felis nec.",
+          "short_message": "Сообщение основного приложения для ваших пользователей должны быть проинформированы о подтверждении или принять решение.",
+          "long_message": "Сообщение основного приложения для ваших пользователей должны быть проинформированы о подтверждении или принять решение. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus dolor vitae justo rutrum, ut lobortis nibh mattis. Aenean id elit commodo, semper felis nec.",
           "checkboxes": {
-            "open": "Is open",
-            "iconVisible": "Is icon visible",
-            "closable": "Is closable"
+            "open": "Открыт",
+            "iconVisible": "Иконка видимая",
+            "closable": "Закрытая"
           },
           "headers": {
-            "severity": "Severity",
-            "length": "Message length"
+            "severity": "Строгость",
+            "length": "Длина сообщения"
           }
         }
       },
@@ -444,12 +444,12 @@
       ]
     },
     "ProgressBar": {
-      "short_desc": "Shows the apps progress on a task, or that the app is performing ongoing work that doesn't block user interaction.",
-      "long_desc": "The ProgressBar has two different visual representations:\\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\\nDeterminate - shows how much progress has been made on a known amount of work.",
+      "short_desc": "Показывает прогресс приложений на задании или это приложение исполняющее непрерывную работу, которая не мешает действиям пользователя.",
+      "long_desc": "ProgressBar имеет два разных визуальных представления:\\nIndeterminate показывает, что задача непрерывна, но не мешает действиям пользователя.\\nDeterminate показывает как много прогресса было выполнено на основе объёма выполненной работы.",
       "samples": {
         "indeterminate": {
-          "title": "An indeterminate progress bar.",
-          "header": "Progress state",
+          "title": "Индетерминированный прогресс барAn indeterminate progress bar.",
+          "header": "Состояние прогресса",
           "states": [
             { "label": "Running", "value": "running" },
             { "label": "Paused", "value": "paused" },
@@ -458,8 +458,8 @@
         },
 
         "determinate": {
-          "title": "A determinate progress bar.",
-          "header": "Progress"
+          "title": "Детерминированный прогресс бар.",
+          "header": "Прогресс"
         }
       },
 
@@ -473,26 +473,26 @@
 
       "samples": {
         "indeterminate": {
-          "title": "An indeterminate progress ring.",
-          "header": "Toggle work",
-          "on": "Working",
-          "off": "Do work"
+          "title": "Индетерминированное кольцо прогресса.",
+          "header": "Переключатель работы",
+          "on": "Работает",
+          "off": "Делать работу"
         },
         "determinate": {
-          "title": "A determinate progress ring",
-          "header": "Progress"
+          "title": "Детерминированное кольцо прогресса.",
+          "header": "Прогресс"
         }
       },
 
       "related": []
     },
     "Tooltip": {
-      "short_desc": "Displays information for an element in a pop-up window.",
-      "long_desc": "A Tooltip shows more information about a UI element. You might show information about what the element does, or what the user should do. The Tooltip is shown when a user hovers over or presses and holds the UI element.",
+      "short_desc": "Показывает информацию для элемента в всплывающем окне.",
+      "long_desc": "Tooltip показывает больше информации об элементе пользовательского интерфейса. Вы можете показать информацию о том, что элемент делает или что пользователь должен делать. Tooltip показывается, когда пользователь висит или нажимает и удерживает элемент пользовательского интерфейса.",
 
       "simple": {
-        "title": "A button with a simple Tooltip",
-        "text": "Button with a simple Tooltip"
+        "title": "Кнопка с простым Tooltip",
+        "text": "Кнопка с простым Tooltip"
       },
       "related": [
         { "title": "Flyout", "category": "dialogsAndFlyouts" },
@@ -502,13 +502,13 @@
   },
   "Text": {
     "NumberBox": {
-      "short_desc": "A text control used for numeric input and evaluation of algebraic equations.",
-      "long_desc": "Use NumberBox to allow users to enter algebraic equations and numeric input in your app.",
+      "short_desc": "Текстовый компонент используется для числового ввода и алгебраических уравнений",
+      "long_desc": "Используйте NumberBox, чтобы разрешить пользователям вводить алгебраические уравнения и числовой ввод в вашем приложении.",
       "samples": {
         "spin_button": {
-          "title": "A NumberBox with a spin button.",
-          "header": "Enter an integer:",
-          "radio_header": "SpinButton placement",
+          "title": "NumberBox c двунаправленныv счётчиком.",
+          "header": "Введите целое:",
+          "radio_header": "Размещение SpinButton",
           "radios": [
             { "label": "Inline", "value": "inline" },
             { "label": "Compact", "value": "compact" }
@@ -522,8 +522,8 @@
       ]
     },
     "TextBox": {
-      "short_desc": "A single-line or multi-line plain text field.",
-      "long_desc": "Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for, and you can customize it in other ways.",
+      "short_desc": "Однострочные или многострочные простые текстовые поля.",
+      "long_desc": "Используйте TextBox чтобы позволить пользователю ввести простое текстовое сообщение в своём приложении. Вы можете добавить заголовок и текст-заполнитель чтобы позволить пользователю знать, для чего TextBox нужен, также вы можете кастомизировать его разными способами.",
 
       "samples": {
         "simple": {
