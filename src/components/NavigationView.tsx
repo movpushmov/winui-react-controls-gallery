@@ -34,15 +34,15 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 		>
 			<NavigationViewItem title="Basic Input" value="/basicInput" icon={IconType.CheckboxComposite}>
 				<NavigationViewItem title="Button" value="/basicInput/Button"/>
-				<NavigationViewItem title="DropdownButton" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="DropdownButton" value="/basicInput/DropdownButton"/>
 				<NavigationViewItem title="HyperlinkButton" value="/basicInput/HyperlinkButton"/>
-				<NavigationViewItem title="ToggleButton" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="SplitButton" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="ToggleSplitButton" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="CheckBox" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="RadioButton" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="Slider" value="/basicInput/DropDownButton"/>
-				<NavigationViewItem title="ToggleSwitch" value="/basicInput/DropDownButton"/>
+				<NavigationViewItem title="ToggleButton" value="/basicInput/ToggleButton"/>
+				<NavigationViewItem title="SplitButton" value="/basicInput/SplitButton"/>
+				<NavigationViewItem title="ToggleSplitButton" value="/basicInput/ToggleSplitButton"/>
+				<NavigationViewItem title="CheckBox" value="/basicInput/CheckBox"/>
+				<NavigationViewItem title="RadioButton" value="/basicInput/RadioButton"/>
+				<NavigationViewItem title="Slider" value="/basicInput/Slider"/>
+				<NavigationViewItem title="ToggleSwitch" value="/basicInput/ToggleSwitch"/>
 			</NavigationViewItem>
 			<NavigationViewItem title="Collections" value="collections" icon={IconType.GridView}>
 				<NavigationViewItem title="GridView" value="/collections/GridView"/>
