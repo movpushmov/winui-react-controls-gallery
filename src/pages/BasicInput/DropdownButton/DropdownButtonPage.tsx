@@ -75,7 +75,7 @@ export const DropdownButtonPage = (): React.ReactElement => {
 			</CodeExample>
 
 			<Footer
-				sourcePageCodeURL="https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/BasicInput/ButtonPage/ButtonPage.tsx"
+				sourcePageCodeURL="https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/BasicInput/DropdownButton/DropdownButtonPage.tsx"
 				relatedControls={t('BasicInput.DropDownButton.related', { returnObjects: true })}
 			/>
 		</div>
