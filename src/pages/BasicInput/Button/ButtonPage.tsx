@@ -24,15 +24,15 @@ const accentButtonCode: SimpleCodeExampleFunc = (t, disabled) => `
 
 const largeContentButtonCode: CodeExampleFunc = t => `
 <Button>
-	${t('BasicInput.Button.samples.large_content.content')}
+    ${t('BasicInput.Button.samples.large_content.content')}
 </Button>
 
 <Button style={{ margin: '8px 0', width: '200px' }}>
-	${t('BasicInput.Button.samples.large_content.content')}
+    ${t('BasicInput.Button.samples.large_content.content')}
 </Button>
 
 <Button style={{ width: '120px' }}>
-	${t('BasicInput.Button.samples.large_content.content')}
+    ${t('BasicInput.Button.samples.large_content.content')}
 </Button>`
 
 export const ButtonPage = (): React.ReactElement => {
@@ -100,7 +100,10 @@ export const ButtonPage = (): React.ReactElement => {
 			</CodeExample>
 
 			<Footer
-				sourcePageCodeURL="https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/BasicInput/ButtonPage/ButtonPage.tsx"
+				sourcePageCodeURL={{
+					componentType: 'BasicInput',
+					componentName: 'Button',
+				}}
 				relatedControls={t('BasicInput.Button.related', { returnObjects: true })}
 			/>
 		</div>

@@ -11,9 +11,14 @@ interface Control {
 }
 
 interface FooterProps {
-	sourcePageCodeURL: string
+	sourcePageCodeURL: {
+		componentType: string
+		componentName: string
+	}
 	relatedControls: Control[]
 }
+
+// https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/BasicInput/ButtonPage/ButtonPage.tsx
 
 export const Footer = (props: FooterProps): React.ReactElement => {
 	const { t } = useTranslation()
@@ -29,7 +34,9 @@ export const Footer = (props: FooterProps): React.ReactElement => {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						href={props.sourcePageCodeURL}
+						href={`https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/${
+							props.sourcePageCodeURL.componentType
+						}/${props.sourcePageCodeURL.componentName}/${props.sourcePageCodeURL.componentName}Page.tsx`}
 					>
 						{t('footer.sourcePage.desc')}
 					</a>

@@ -61,6 +61,26 @@ export function CheckBox(props: CheckBoxProps): React.ReactElement {
 		}
 	}, [props, state])
 
+	const getNextValue = useCallback(() => {
+		if (props.isThreeState) {
+			switch (state) {
+				case CheckBoxState.Unchecked: {
+					return CheckBoxState.Checked
+				}
+				case CheckBoxState.Checked: {
+					return CheckBoxState.Indeterminate
+				}
+				case CheckBoxState.Indeterminate: {
+					return CheckBoxState.Unchecked
+				}
+			}
+		} else if (state === CheckBoxState.Unchecked) {
+			return CheckBoxState.Checked
+		} else {
+			return CheckBoxState.Unchecked
+		}
+	}, [props.isThreeState, state])
+
 	const clickHandler = useCallback(() => {
 		if (props.disabled) {
 			return
@@ -68,28 +88,12 @@ export function CheckBox(props: CheckBoxProps): React.ReactElement {
 
 		if (props.value === void 0) {
 			toggleWithValueUndefined()
+		} else {
+			props.onCheck?.(getNextValue())
 		}
 
-		if (props.isThreeState) {
-			switch (state) {
-				case CheckBoxState.Unchecked: {
-					setState(CheckBoxState.Checked)
-					break
-				}
-				case CheckBoxState.Checked: {
-					setState(CheckBoxState.Indeterminate)
-					break
-				}
-				case CheckBoxState.Indeterminate: {
-					setState(CheckBoxState.Unchecked)
-				}
-			}
-		} else if (state === CheckBoxState.Unchecked) {
-			setState(CheckBoxState.Checked)
-		} else {
-			setState(CheckBoxState.Unchecked)
-		}
-	}, [props.disabled, props.isThreeState, props.value, state, toggleWithValueUndefined])
+		setState(getNextValue())
+	}, [getNextValue, props, toggleWithValueUndefined])
 
 	return (
 		<div>

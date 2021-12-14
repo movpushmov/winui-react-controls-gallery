@@ -90,7 +90,7 @@
     },
     "ToggleButton": {
       "short_desc": "A button that can be switched between two states like a CheckBox.",
-      "long_desc": "A ToggleButton looks like a Button, but works like a CheckBox. It typically has two states, checked (on) or unchecked (off). You can determine it's state by checking the value or defaultValue property.",
+      "long_desc": "A ToggleButton looks like a Button, but works like a CheckBox. It typically has two states, checked (on) or unchecked (off). You can determine it's state by checking the value or initialValue property.",
 
       "samples": {
         "simple": {

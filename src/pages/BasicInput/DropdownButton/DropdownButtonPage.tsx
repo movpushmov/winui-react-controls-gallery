@@ -11,18 +11,18 @@ type CodeExampleFunc = (
 
 const simpleDropdown: CodeExampleFunc = t => `
 <DropDownButton items={items.map((item: string) => ({ name: item }))}>
-	${t('BasicInput.DropDownButton.samples.simple.label')}
+    ${t('BasicInput.DropDownButton.samples.simple.label')}
 </DropDownButton>
 `
 
 const dropdownWithIcons: CodeExampleFunc = t => `
 <DropDownButton
-		items={itemsWithIcons.map(item => ({
-			icon: item.icon,
-			name: item.label,
-		}))}
-	>
-	<Icon type={labelIconValue}/>
+        items={itemsWithIcons.map(item => ({
+            icon: item.icon,
+            name: item.label,
+        }))}
+    >
+    <Icon type={labelIconValue}/>
 </DropDownButton>
 `
 
@@ -75,7 +75,10 @@ export const DropdownButtonPage = (): React.ReactElement => {
 			</CodeExample>
 
 			<Footer
-				sourcePageCodeURL="https://github.com/movpushmov/winui-react-controls-gallery/blob/main/src/pages/BasicInput/DropdownButton/DropdownButtonPage.tsx"
+				sourcePageCodeURL={{
+					componentType: 'BasicInput',
+					componentName: 'DropdownButton',
+				}}
 				relatedControls={t('BasicInput.DropDownButton.related', { returnObjects: true })}
 			/>
 		</div>
