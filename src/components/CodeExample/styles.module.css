@@ -34,3 +34,23 @@
     border-radius: 0 0 8px 8px;
     border-top: 1px solid #EAEAEA;
 }
+
+
+@media (prefers-color-scheme: dark) {
+    .main-block {
+        border-color: rgba(117, 117, 117, 0.4);
+    }
+
+    .example-block {
+        background-color: #202020;
+    }
+
+    .code-block {
+        background-color: #1C1C1C !important;
+        border-color: rgba(117, 117, 117, 0.4);
+    }
+
+    .right-block {
+        background-color: #1C1C1C;
+    }
+}
