@@ -332,7 +332,7 @@
       },
       "related": [
         { "title": "Flyout", "category": "dialogsAndFlyouts" },
-        { "title": "Tooltip", "category": "dialogsAndFlyouts" }
+        { "title": "Tooltip", "category": "StatusAndInfo" }
       ]
     },
     "Flyout": {

@@ -1,11 +1,11 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, SplitButton, TextBlock, TitleBlock, ToggleButton } from '../../../lib'
+import { Button, TextBlock, TitleBlock, ToggleButton, ToggleSplitButton } from '../../../lib'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { Footer } from '../../../components/Footer/Footer'
 
 const codeExample = (content: string): string => `
-<SplitButton
+<ToggleSplitButton
     items={colors.map((color, key) =>
         <Button
             key={key}
@@ -23,7 +23,7 @@ const codeExample = (content: string): string => `
     )}
     >
     {content}
-</SplitButton>
+</ToggleSplitButton>
 `
 
 type Color = {
@@ -31,25 +31,25 @@ type Color = {
 	hex: string
 }
 
-export const SplitButtonPage = (): React.ReactElement => {
+export const ToggleSplitButtonPage = (): React.ReactElement => {
 	const { t } = useTranslation()
 	const colors: Color[] = t(
-		'BasicInput.SplitButton.samples.with_text.colors',
+		'BasicInput.ToggleSplitButton.samples.number_box.content',
 		{ returnObjects: true },
 	)
 
 	return (
 		<div>
 			<TitleBlock type="title" style={{ margin: 0 }}>ToggleButton</TitleBlock>
-			<TextBlock>{t('BasicInput.SplitButton.long_desc')}</TextBlock>
+			<TextBlock>{t('BasicInput.ToggleSplitButton.long_desc')}</TextBlock>
 
 			<CodeExample
-				title={t('BasicInput.SplitButton.samples.with_text.title')}
+				title={t('BasicInput.ToggleSplitButton.samples.number_box.title')}
 				code={codeExample(
-					t('BasicInput.SplitButton.samples.with_text.content'),
+					t('BasicInput.ToggleSplitButton.samples.number_box.content'),
 				)}
 			>
-				<SplitButton
+				<ToggleSplitButton
 					items={colors.map((color, key) =>
 						<Button
 							key={key}
@@ -66,16 +66,16 @@ export const SplitButtonPage = (): React.ReactElement => {
 						</Button>,
 					)}
 				>
-					{t('BasicInput.SplitButton.samples.with_text.content')}
-				</SplitButton>
+					{t('BasicInput.ToggleSplitButton.samples.with_text.content')}
+				</ToggleSplitButton>
 			</CodeExample>
 
 			<Footer
 				sourcePageCodeURL={{
 					componentType: 'BasicInput',
-					componentName: 'SplitButton',
+					componentName: 'ToggleSplitButton',
 				}}
-				relatedControls={t('BasicInput.SplitButton.related', { returnObjects: true })}
+				relatedControls={t('BasicInput.ToggleSplitButton.related', { returnObjects: true })}
 			/>
 		</div>
 	)

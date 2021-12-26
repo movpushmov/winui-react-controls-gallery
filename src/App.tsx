@@ -8,6 +8,8 @@ import { DropdownButtonPage } from './pages/BasicInput/DropdownButton/DropdownBu
 import { HyperlinkButtonPage } from './pages/BasicInput/HyperlinkButton/HyperlinkButtonPage'
 import { ToggleButtonPage } from './pages/BasicInput/ToggleButton/ToggleButtonPage'
 import { SplitButtonPage } from './pages/BasicInput/SplitButton/SplitButtonPage'
+import { CheckBoxPage } from './pages/BasicInput/CheckBox/CheckBoxPage'
+import { ContentDialogPage } from './pages/DialogsAndFlyouts/ContentDialog/ContentDialogPage'
 
 function App(): React.ReactElement {
 	const { t } = useTranslation()
@@ -28,6 +30,10 @@ function App(): React.ReactElement {
 					<Route path="/BasicInput/HyperlinkButton"><HyperlinkButtonPage/></Route>
 					<Route path="/BasicInput/ToggleButton"><ToggleButtonPage/></Route>
 					<Route path="/BasicInput/SplitButton"><SplitButtonPage/></Route>
+					<Route path="/BasicInput/CheckBox"><CheckBoxPage/></Route>
+
+
+					<Route path="/DialogsAndFlyouts/ContentDialog"><ContentDialogPage/></Route>
 				</Switch>
 			</div>
 		</div>

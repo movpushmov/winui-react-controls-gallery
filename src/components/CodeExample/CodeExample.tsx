@@ -36,7 +36,7 @@ export const CodeExample = (props: CodeExampleProps): React.ReactElement => {
 					language="jsx"
 					className={styles['code-block']}
 				>
-					{props.code}
+					{props.code ?? ''}
 				</SyntaxHighlighter>
 			</div>
 		</>
