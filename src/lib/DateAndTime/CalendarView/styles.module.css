@@ -1,0 +1,166 @@
+.container {
+    position: relative;
+
+    width: 300px;
+
+    border-radius: 7px;
+    border: 1px solid var(--surface-stroke-default);
+}
+
+@media (prefers-color-scheme: dark) {
+    .container {
+        background: linear-gradient(0deg, rgba(44, 44, 44, 0.15), rgba(44, 44, 44, 0.15)), rgba(44, 44, 44, 0.96);
+    }
+}
+
+.container::after {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 0;
+    left: 0;
+
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../../noise.png");
+    opacity: 2%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    padding: 8px 4px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.controls>.timelapse-button {
+    flex: 1;
+
+    background-color: transparent;
+    border: none;
+
+    justify-content: flex-start;
+
+    margin-left: 4px;
+
+    padding: 4px 8px;
+}
+
+.timelapse-button>p {
+    margin: 4px 0;
+}
+
+.scroll-button {
+    margin: 0 4px;
+
+    background-color: transparent;
+    border: none;
+
+    height: 35px;
+}
+
+.scroll-button:active {
+    color: var(--fill-color-control-strong-default);
+}
+
+.scroll-button>span {
+    margin: 4px 0;
+    font-size: 8px;
+}
+
+.days-names {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 3px 0 3px;
+
+    height: 40px;
+}
+
+.days-names>p {
+    width: 40px;
+    text-align: center;
+}
+
+.days-names>p:first-child {
+    margin-left: 2px;
+}
+
+.calendar-content {
+    border-top: 1px solid var(--card-stroke-default);
+    border-radius: 0 0 7px 7px;
+
+    height: 298px;
+
+
+    position: relative;
+    z-index: 2;
+
+    background-color: var(--fill-color-layer);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    padding: 0 3px;
+
+    flex: 1;
+}
+
+.dates>div {
+    height: 100%;
+}
+
+.date {
+    width: 40px;
+    height: 40px;
+
+    margin: 1px;
+
+    background-color: transparent;
+    border: none;
+
+    border-radius: 50%;
+    color: var(--text-color-primary);
+}
+
+.date:hover {
+    background-color: var(--fill-color-subtle-secondary);
+}
+
+.date:active {
+    background-color: var(--fill-color-subtle-tertiary);
+    color: var(--text-color-secondary)
+}
+
+.current-date {
+    composes: date;
+
+    background-color: var(--accent-color);
+    color: var(--text-on-accent-color-primary) !important;
+}
+
+
+.out-date {
+    composes: date;
+
+    color: rgba(255, 255, 255, 40%);
+}

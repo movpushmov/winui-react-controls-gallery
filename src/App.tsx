@@ -10,6 +10,7 @@ import { ToggleButtonPage } from './pages/BasicInput/ToggleButton/ToggleButtonPa
 import { SplitButtonPage } from './pages/BasicInput/SplitButton/SplitButtonPage'
 import { CheckBoxPage } from './pages/BasicInput/CheckBox/CheckBoxPage'
 import { ContentDialogPage } from './pages/DialogsAndFlyouts/ContentDialog/ContentDialogPage'
+import { CalendarViewPage } from './pages/DateAndTime/CalendarView/CalendarViewPage'
 
 function App(): React.ReactElement {
 	const { t } = useTranslation()
@@ -34,6 +35,8 @@ function App(): React.ReactElement {
 
 
 					<Route path="/DialogsAndFlyouts/ContentDialog"><ContentDialogPage/></Route>
+
+					<Route path="/DateAndTime/CalendarView"><CalendarViewPage/></Route>
 				</Switch>
 			</div>
 		</div>

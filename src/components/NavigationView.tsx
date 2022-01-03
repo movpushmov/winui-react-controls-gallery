@@ -57,6 +57,9 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 				<NavigationViewItem title="BreadcrumbBar" value="/navigation/BreadcrumbBar"/>
 				<NavigationViewItem title="NavigationView" value="/navigation/NavigationView"/>
 			</NavigationViewItem>
+			<NavigationViewItem title="Date and Time" value="dateAndTime" icon={IconType.Calendar}>
+				<NavigationViewItem title="CalendarView" value="/dateAndTime/CalendarView"/>
+			</NavigationViewItem>
 			<NavigationViewItem title="Status and info" value="statusAndInfo" icon={IconType.ActionCenter}>
 				<NavigationViewItem title="InfoBadge" value="infoBadge"/>
 				<NavigationViewItem title="InfoBar" value="infoBar"/>
