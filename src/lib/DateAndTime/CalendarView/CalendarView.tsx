@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 
 import { Header } from './components/Header/Header'
 import { Content } from './components/Content/Content'
 import { Days } from './components/Days/Days'
+import { PlainDate, Month, getCurrentDate } from '../../utils/date'
 
 interface CalendarViewProps {
 	locale?: string
@@ -24,13 +25,20 @@ export const CalendarView = (props: CalendarViewProps): React.ReactElement => {
 		isOutOfScopeEnabled: true,
 	}, props)
 
+	const date = getCurrentDate()
+	const [currentPeriod, setCurrentPeriod] = useState<Month>({ month: date.month, year: date.year })
+
 	return (
 		<div className={styles['container']}>
-			<Header currentPeriodDate={new Date()} locale={defaultProps.locale}/>
+			<Header currentPeriodDate={currentPeriod} locale={defaultProps.locale}/>
 
 			<div className={styles['content']}>
 				<Days locale={defaultProps.locale}/>
-				<Content locale={defaultProps.locale}/>
+				<Content
+					locale={defaultProps.locale}
+					currentPeriod={currentPeriod}
+					setCurrentPeriod={setCurrentPeriod}
+				/>
 			</div>
 		</div>
 	)

@@ -2,9 +2,15 @@ import React from 'react'
 import { Button } from '../../../../BasicInput/Button/Button'
 
 import styles from './content.module.css'
+import { PlainDate, isDatesEqual, Month } from '../../../../utils/date'
 
 interface DateButtonProps {
-	data: Date[]
+	data: {
+		days: PlainDate[]
+		currentMonth: Month
+		currentDate: PlainDate
+	}
+
 	style: React.CSSProperties
 
 	rowIndex: number
@@ -14,8 +20,13 @@ interface DateButtonProps {
 const daysInRow = 7
 
 export const DateButton = React.memo(({ data, style, rowIndex, columnIndex } : DateButtonProps): React.ReactElement => {
-	const isCurrentDate = false
-	const out = false
+	const index = rowIndex * daysInRow + columnIndex
+
+	const date = data.days[index]
+	const { day, month, year } = date
+
+	const isCurrentDate = isDatesEqual(date, data.currentDate)
+	const out = !(data.currentMonth.month === month && data.currentMonth.year === year)
 
 	let className = isCurrentDate ? styles['current-date'] : styles['date']
 
@@ -23,17 +34,14 @@ export const DateButton = React.memo(({ data, style, rowIndex, columnIndex } : D
 		className = styles['out-date']
 	}
 
-	const index = rowIndex * daysInRow + columnIndex
-	const day = data[index]
-
 	return (
 		<Button
 			className={className}
-			key={day.getDate()}
+			key={`${day}.${month}.${year}`}
 			style={style}
 			type={isCurrentDate ? 'accent' : 'default'}
 		>
-			{day.getDate()}
+			{day}
 		</Button>
 	)
 })
