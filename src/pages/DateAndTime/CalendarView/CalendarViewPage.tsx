@@ -14,7 +14,7 @@ export const CalendarViewPage = (): React.ReactElement => {
 			</TitleBlock>
 
 			<CodeExample title="CalendarView">
-				<CalendarView/>
+				<CalendarView locale="ru"/>
 			</CodeExample>
 		</div>
 	)
