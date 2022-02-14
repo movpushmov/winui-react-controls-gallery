@@ -15,6 +15,11 @@ interface CalendarViewProps {
 
 	isGroupLabelVisible?: boolean
 	isOutOfScopeEnabled?: boolean
+
+	blockedDates?: Date[]
+	selectedDates?: Date[]
+
+	onSelect?: (date: Date) => void
 }
 
 export enum CalendarZoom {
