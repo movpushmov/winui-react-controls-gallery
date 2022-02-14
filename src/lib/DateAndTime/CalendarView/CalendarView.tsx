@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 
 import { Header } from './components/Header/Header'
-import { Content } from './components/Content/Content'
-import { Days } from './components/Days/Days'
-import { PlainDate, Month, getCurrentDate } from '../../utils/date'
+import { Month } from './components/Content/components/Month'
+import { AnimationProvider } from './components/AnimationProvider/AnimationProvider'
+import { getDecade } from '../../utils/date'
+import { Year } from './components/Content/components/Year'
+import { Decade } from './components/Content/components/Decade'
 
 interface CalendarViewProps {
 	locale?: string
@@ -14,6 +16,14 @@ interface CalendarViewProps {
 	isGroupLabelVisible?: boolean
 	isOutOfScopeEnabled?: boolean
 }
+
+export enum CalendarZoom {
+	MONTH,
+	YEAR,
+	DECADE
+}
+
+const offset = 1
 
 export const CalendarView = (props: CalendarViewProps): React.ReactElement => {
 	const defaultProps = Object.assign({
@@ -25,20 +35,141 @@ export const CalendarView = (props: CalendarViewProps): React.ReactElement => {
 		isOutOfScopeEnabled: true,
 	}, props)
 
-	const date = getCurrentDate()
-	const [currentPeriod, setCurrentPeriod] = useState<Month>({ month: date.month, year: date.year })
+	const currentDay = useRef(new Date())
+
+	const [currentPeriod, setCurrentPeriod] = useState(new Date())
+	const [currentYear, setCurrentYear] = useState(currentPeriod.getFullYear())
+	const [currentDecade, setCurrentDecade] = useState(getDecade(currentPeriod.getFullYear()))
+
+	useEffect(() => {
+		setCurrentYear(currentPeriod.getFullYear())
+		setCurrentDecade(getDecade(currentPeriod.getFullYear()))
+	}, [currentPeriod])
+
+	const [zoom, setZoom] = useState(CalendarZoom.MONTH)
 
 	return (
 		<div className={styles['container']}>
-			<Header currentPeriodDate={currentPeriod} locale={defaultProps.locale}/>
+			<Header
+				currentPeriod={currentPeriod}
+				zoom={zoom}
+				currentYear={currentYear}
+				currentDecade={currentDecade}
+
+				locale={defaultProps.locale}
+				actions={{
+					next: () => {
+						switch (zoom) {
+							case CalendarZoom.MONTH: {
+								setCurrentPeriod(() => {
+									const newDate = new Date(currentPeriod)
+
+									newDate.setDate(offset)
+									newDate.setMonth(newDate.getMonth() + offset)
+
+									return newDate
+								})
+
+								break
+							}
+							case CalendarZoom.YEAR: {
+								setCurrentYear(y => y + offset)
+
+								break
+							}
+							case CalendarZoom.DECADE: {
+								setCurrentDecade(d => getDecade(d.end + offset))
+
+								break
+							}
+						}
+					},
+
+					prev: () => {
+						switch (zoom) {
+							case CalendarZoom.MONTH: {
+								setCurrentPeriod(() => {
+									const newDate = new Date(currentPeriod)
+
+									newDate.setDate(offset)
+									newDate.setMonth(newDate.getMonth() - offset)
+
+									return newDate
+								})
+
+								break
+							}
+							case CalendarZoom.YEAR: {
+								setCurrentYear(y => y - offset)
+
+								break
+							}
+							case CalendarZoom.DECADE: {
+								setCurrentDecade(d => getDecade(d.start - offset))
+
+								break
+							}
+						}
+					},
+
+					changeZoom: () => {
+						switch (zoom) {
+							case CalendarZoom.MONTH: {
+								setZoom(CalendarZoom.YEAR)
+								break
+							}
+							case CalendarZoom.YEAR: {
+								setZoom(CalendarZoom.DECADE)
+								break
+							}
+							case CalendarZoom.DECADE: {
+								break
+							}
+						}
+					},
+				}}
+			/>
 
 			<div className={styles['content']}>
-				<Days locale={defaultProps.locale}/>
-				<Content
-					locale={defaultProps.locale}
-					currentPeriod={currentPeriod}
-					setCurrentPeriod={setCurrentPeriod}
-				/>
+				<AnimationProvider zoom={zoom} type={CalendarZoom.MONTH}>
+					<Month
+						locale={defaultProps.locale}
+						currentPeriod={currentPeriod}
+						currentDay={{
+							date: currentDay.current.getDate(),
+							month: currentDay.current.getMonth(),
+							year: currentDay.current.getFullYear(),
+						}}
+					/>
+				</AnimationProvider>
+
+				<AnimationProvider zoom={zoom} type={CalendarZoom.YEAR}>
+					<Year
+						now={{
+							month: currentDay.current.getMonth(),
+							year: currentDay.current.getFullYear(),
+						}}
+
+						currentYear={currentYear}
+						setCurrentPeriod={period => {
+							setZoom(CalendarZoom.MONTH)
+							setCurrentPeriod(period)
+						}}
+						locale={defaultProps.locale}
+					/>
+				</AnimationProvider>
+
+				<AnimationProvider zoom={zoom} type={CalendarZoom.DECADE}>
+					<Decade
+						currentYear={currentDay.current.getFullYear()}
+						currentDecade={currentDecade}
+						setCurrentYear={year => {
+							setCurrentYear(year)
+							setZoom(CalendarZoom.YEAR)
+						}}
+						locale={defaultProps.locale}
+					/>
+				</AnimationProvider>
 			</div>
 		</div>
 	)

@@ -4,32 +4,42 @@ import { Button } from '../../../../BasicInput/Button/Button'
 
 import styles from './header.module.css'
 import { Icon, IconType } from '../../../../Icons/Icon'
-import { TextBlock } from '../../../../Text/Text/TextBlock'
-import { Month, toDate } from '../../../../utils/date'
+import { Decade } from '../../../../utils/date'
+import { Title } from './Title'
+import { CalendarZoom } from '../../CalendarView'
 
 interface HeaderProps {
-	currentPeriodDate: Month
+	zoom: CalendarZoom
+	currentPeriod: Date
+	currentYear: number
+	currentDecade: Decade
+
 	locale: string
+
+	actions: {
+		next: () => void
+		prev: () => void
+		changeZoom: () => void
+	}
 }
 
-export const Header = (props: HeaderProps): React.ReactElement => {
-	const period = toDate(props.currentPeriodDate)
+export const Header = (props: HeaderProps): React.ReactElement =>
+	<div className={styles['controls']}>
+		<Button className={styles['timelapse-button']} onClick={props.actions.changeZoom}>
+			<Title
+				zoom={props.zoom}
+				locale={props.locale}
+				currentPeriod={props.currentPeriod}
+				currentYear={props.currentYear}
+				currentDecade={props.currentDecade}
+			/>
+		</Button>
 
-	return (
-		<div className={styles['controls']}>
-			<Button className={styles['timelapse-button']}>
-				<TextBlock type="body-strong">
-					{period.toLocaleDateString(props.locale, { month: 'long' })}{' '}
-					{period.getFullYear()}
-				</TextBlock>
-			</Button>
+		<Button className={styles['scroll-button']} onClick={props.actions.prev}>
+			<Icon type={IconType.CaretUpSolid8} style={{ color: 'var(--fill-color-control-strong-default)' }}/>
+		</Button>
+		<Button className={styles['scroll-button']} onClick={props.actions.next}>
+			<Icon type={IconType.CaretDownSolid8} style={{ color: 'var(--fill-color-control-strong-default)' }}/>
+		</Button>
+	</div>
 
-			<Button className={styles['scroll-button']}>
-				<Icon type={IconType.CaretUpSolid8} style={{ color: 'var(--fill-color-control-strong-default)' }}/>
-			</Button>
-			<Button className={styles['scroll-button']}>
-				<Icon type={IconType.CaretDownSolid8} style={{ color: 'var(--fill-color-control-strong-default)' }}/>
-			</Button>
-		</div>
-	)
-}

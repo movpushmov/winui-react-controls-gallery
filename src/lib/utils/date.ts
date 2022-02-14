@@ -1,196 +1,87 @@
-export interface Month {
-	year: number
-	month: number
-}
-
-export interface PlainDate extends Month {
-	day: number
-}
-
 // const
 const firstDay = 1
 const offset = 1
-const lastMonth = 11
+const lastDayIndex = 6
+const lastMonthIndex = 11
+const decade = 10
 
-export function getNearestYears(middleYear: number): number[] {
-	return Array(24).map((v, i) => middleYear - (24 - i))
+export interface Decade {
+	start: number
+	end: number
 }
 
-function enumerateMonths(
-	month: number,
-	year: number,
-	direction: 'past' | 'future',
-	iterations: number,
-	callback: (month: number, year: number) => void,
-): void {
-	if (direction === 'past') {
-		for (let i = 0; i < iterations; i++) {
-			if (month === 0) {
-				month = lastMonth
-				year--
-			} else {
-				month--
-			}
+function getDays(month: number, year: number): Date[] {
+	const date = new Date(year, month, firstDay)
+	const days: Date[] = []
 
-			callback(month, year)
-		}
-	} else {
-		for (let i = 0; i < iterations; i++) {
-			if (month === lastMonth) {
-				month = 0
-				year++
-			} else {
-				month++
-			}
-
-			callback(month, year)
-		}
+	while (date.getMonth() === month) {
+		days.push(new Date(date))
+		date.setDate(date.getDate() + offset)
 	}
+
+	return days
 }
 
-export function getMonthsWithOffset(months: Month[], direction: 'past' | 'future', monthsOffset?: number): Month[] {
-	const buff: Month[] = []
+export function getDaysInMonth(month: number, year: number): Date[] {
+	let days: Date[] = getDays(month, year)
 
-	if (direction === 'past') {
-		const [{ month, year }] = months
+	{
+		let daysInPrevMonth: Date[] = []
 
-		for (let i = 0; i < (monthsOffset ?? offset); i++) {
-			months.pop()
+		if (month === 0) {
+			daysInPrevMonth = getDays(lastMonthIndex, year - offset)
+		} else {
+			daysInPrevMonth = getDays(month - offset, year)
 		}
 
-		enumerateMonths(month, year, 'past', monthsOffset ?? offset, (m, y) => {
-			buff.push({ month: m, year: y })
-		})
-
-		return buff.reverse().concat(months)
+		days = daysInPrevMonth
+			.slice(Math.max(daysInPrevMonth.length - days[0].getDay(), 0))
+			.concat(days)
 	}
 
-	const lastMonth = months[months.length]
+	{
+		let daysInNextMonth: Date[] = []
 
-	for (let i = 0; i < (monthsOffset ?? offset); i++) {
-		months.unshift()
+		if (month === lastMonthIndex) {
+			daysInNextMonth = getDays(0, year + offset)
+		} else {
+			daysInNextMonth = getDays(month + offset, year)
+		}
+
+		if (lastDayIndex - days[0].getDay() > 0) {
+			days = days.concat(daysInNextMonth.slice(0, lastDayIndex - days[days.length - offset].getDay()))
+		}
 	}
 
-	enumerateMonths(lastMonth.month, lastMonth.year, 'future', monthsOffset ?? offset, (m, y) => {
-		buff.push({ month: m, year: y })
-	})
-
-	return months.concat(buff)
+	return days
 }
 
-export function getNearestMonths(middleMonth: number, monthYear: number): Month[] {
-	let months: Month[] = [{ month: middleMonth, year: monthYear }]
+export function getMonths(locale: string): Date[] {
+	const months: Date[] = []
 
-	enumerateMonths(middleMonth, monthYear, 'past', 24, (month, year) => {
-		months.push({ month, year })
-	})
+	for (let i = 0; i <= lastMonthIndex; i++) {
+		const date = new Date()
+		date.setDate(offset)
+		date.setMonth(i)
 
-	months = months.reverse()
-
-	enumerateMonths(middleMonth, monthYear, 'future', 24, (month, year) => {
-		months.push({ month, year })
-	})
+		months.push(new Date(date))
+	}
 
 	return months
 }
 
-export function getDaysInMonth(month: number, year: number): PlainDate[] {
-	const date = new Date(year, month, firstDay)
-	const days: PlainDate[] = []
-	while (date.getMonth() === month) {
-		days.push({ day: date.getDate(), month: date.getMonth(), year: date.getFullYear() })
-		date.setDate(date.getDate() + offset)
-	}
-	return days
-}
+const round = (n: number, to: number): number => n - n % to
 
-function getAlignDays(month: number, year: number): PlainDate[] {
-	const daysInFirstMonth = getDaysInMonth(month, year)
-	const daysInPrevMonth = getDaysInMonth(month - offset, year)
+export function getDecade(year: number): Decade {
+	const now = new Date(year, 0, firstDay)
 
-	return daysInPrevMonth
-		.slice(Math.max(daysInPrevMonth.length - toDate(daysInFirstMonth[0]).getDay(), 0))
-		.concat([...daysInFirstMonth])
-}
-
-export function getDays(months: Month[]): PlainDate[] {
-	let days: PlainDate[] = getAlignDays(months[0].month, months[0].year)
-
-	for (let i = offset; i < months.length; i++) {
-		const { month, year } = months[i]
-		days = days.concat(getDaysInMonth(month, year))
-	}
-
-	return days
-}
-
-export function getDaysWithOffset(days: PlainDate[], direction: 'past' | 'future', monthOffset?: number): PlainDate[] {
-	let buff: PlainDate[] = []
-
-	while (days[0].day !== firstDay) {
-		days.shift()
-	}
-
-	const [firstDayInMonth] = days
-	const lastDay = days[days.length]
-
-	if (direction === 'past') {
-		while (days[days.length].month === lastDay.month) {
-			days.pop()
-		}
-
-		enumerateMonths(
-			firstDayInMonth.month,
-			firstDayInMonth.year,
-			'past',
-			monthOffset ?? offset,
-			(m, y) => buff = getDaysInMonth(m, y).concat(buff),
-		)
-
-		return getAlignDays(buff[0].month, buff[0].year).concat(buff.concat(days))
-	}
-
-	while (days[0].month === firstDayInMonth.month) {
-		days.shift()
-	}
-
-	enumerateMonths(lastDay.month, lastDay.year, 'future', monthOffset ?? offset, (m, y) => {
-		buff = buff.concat(getDaysInMonth(m, y))
-	})
-
-	return getAlignDays(days[0].month, days[0].year).concat(days.concat(buff))
-}
-
-export function isDatesEqual(first: PlainDate, second: PlainDate): boolean {
-	return (
-		first.day === second.day &&
-		first.month === second.month &&
-		first.year === second.year
-	)
-}
-
-export function getCurrentDate(): PlainDate {
-	const date = new Date()
+	const start = new Date(round(now.getFullYear(), decade), 0, offset)
+	// Go to the start of the next period ...
+	const end = new Date(round(now.getFullYear(), decade) + decade, 0, offset)
+	end.setDate(end.getDate() - offset) // then go one day back
 
 	return {
-		day: date.getDate(),
-		month: date.getMonth(),
-		year: date.getFullYear(),
+		start: start.getFullYear(),
+		end: end.getFullYear(),
 	}
-}
-
-export function toPlainDate(date: Date): PlainDate {
-	return {
-		day: date.getDate(),
-		month: date.getMonth(),
-		year: date.getFullYear(),
-	}
-}
-
-export function toDate(plainDate: PlainDate | Month): Date {
-	if ('day' in plainDate) {
-		return new Date(plainDate.year, plainDate.month, plainDate.day)
-	}
-
-	return new Date(plainDate.year, plainDate.month, firstDay)
 }

@@ -5,7 +5,9 @@
 
     align-items: center;
 
-    padding: 0 3px;
+    padding: 4px 3px;
+
+    height: 252px;
 
     flex: 1;
 }
