@@ -20,7 +20,11 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 		if (e.isSettings) {
 			history.push('/settings')
 		} else if (e.selectedValues) {
-			history.push(e.selectedValues[0].toString() || '/')
+			const [value] = e.selectedValues
+
+			if (value) {
+				history.push(value.toString() || '/')
+			}
 		}
 	}, [history])
 

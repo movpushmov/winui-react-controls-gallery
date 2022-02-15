@@ -44,7 +44,7 @@ export const DropdownButtonPage = (): React.ReactElement => {
 
 	const labelIconIndex: number = iconsKeys.indexOf(t('BasicInput.DropDownButton.samples.withIcons.labelIcon'))
 
-	const labelIconValue: IconType = iconsValues[labelIconIndex]
+	const labelIconValue: IconType | undefined = iconsValues[labelIconIndex]
 
 	return (
 		<div className={styles['sub-page-container']}>
@@ -70,7 +70,7 @@ export const DropdownButtonPage = (): React.ReactElement => {
 						name: item.label,
 					}))}
 				>
-					<Icon type={labelIconValue}/>
+					<Icon type={labelIconValue ?? IconType.StatusCircleQuestionMark}/>
 				</DropDownButton>
 			</CodeExample>
 
