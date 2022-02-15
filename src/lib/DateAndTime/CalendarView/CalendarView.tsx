@@ -198,6 +198,7 @@ export const CalendarView = (props: CalendarViewProps): React.ReactElement => {
 							setCurrentPeriod(period)
 						}}
 						locale={defaultProps.locale}
+						validator={props.validator}
 					/>
 				</AnimationProvider>
 
@@ -210,6 +211,7 @@ export const CalendarView = (props: CalendarViewProps): React.ReactElement => {
 							setZoom(CalendarZoom.YEAR)
 						}}
 						locale={defaultProps.locale}
+						validator={props.validator}
 					/>
 				</AnimationProvider>
 			</div>
