@@ -7,6 +7,7 @@ interface DateButtonProps {
 
 	isCurrentData: boolean
 	isOut: boolean
+	isBlocked: boolean
 
 	style?: React.CSSProperties
 	onClick?: () => void
@@ -17,6 +18,10 @@ export const DateButton = (props: DateButtonProps): React.ReactElement => {
 
 	if (props.isOut && !props.isCurrentData) {
 		className = styles['out-date']
+	}
+
+	if (props.isBlocked) {
+		className += ` ${styles['blocked-date']}`
 	}
 
 	return (

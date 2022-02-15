@@ -14,7 +14,17 @@ export const CalendarViewPage = (): React.ReactElement => {
 			</TitleBlock>
 
 			<CodeExample title="CalendarView">
-				<CalendarView locale="ru"/>
+				<CalendarView
+					locale="ru"
+					validator={({ type, value }) => {
+						// eslint-disable-next-line @typescript-eslint/no-magic-numbers
+						if (type === 'month' && value < 7) {
+							return false
+						}
+
+						return true
+					}}
+				/>
 			</CodeExample>
 		</div>
 	)
