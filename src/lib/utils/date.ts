@@ -36,7 +36,7 @@ export function getDaysInMonth(month: number, year: number): Date[] {
 	}
 
 	{
-		let daysInNextMonth: Date[] = month === lastMonthIndex ?
+		const daysInNextMonth: Date[] = month === lastMonthIndex ?
 			getDays(0, year + offset) :
 			getDays(month + offset, year)
 
