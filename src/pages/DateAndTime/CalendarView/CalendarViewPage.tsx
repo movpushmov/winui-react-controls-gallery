@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { TitleBlock } from '../../../lib'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { CalendarView } from '../../../lib/DateAndTime/CalendarView/CalendarView'
+import { CalendarDatePicker } from '../../../lib/DateAndTime/CalendarDatePicker/CalendarDatePicker'
 
 export const CalendarViewPage = (): React.ReactElement => {
 	const { t } = useTranslation()
@@ -15,6 +16,7 @@ export const CalendarViewPage = (): React.ReactElement => {
 
 			<CodeExample title="CalendarView">
 				<CalendarView
+					selectionMode="none"
 					locale="ru"
 					validator={date => {
 						if (date.type === 'day') {
@@ -25,6 +27,10 @@ export const CalendarViewPage = (): React.ReactElement => {
 						return true
 					}}
 				/>
+			</CodeExample>
+
+			<CodeExample title="Calendar DatePicker">
+				<CalendarDatePicker/>
 			</CodeExample>
 		</div>
 	)

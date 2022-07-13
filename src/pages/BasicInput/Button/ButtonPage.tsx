@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { TFunction, useTranslation } from 'react-i18next'
-import { Button, CheckBox, CheckBoxState, TextBlock, TitleBlock } from '../../../lib'
+import { Button, CheckBox, CheckBoxState, TextBlock, TextBox, TitleBlock } from '../../../lib'
 import styles from './styles.module.css'
 import { Footer } from '../../../components/Footer/Footer'
 
@@ -98,6 +98,24 @@ export const ButtonPage = (): React.ReactElement => {
 					{t('BasicInput.Button.samples.accent_styled.content')}
 				</Button>
 			</CodeExample>
+
+			<TextBox readOnly value={`
+Props type definition:
+				
+export interface ButtonProps extends Omit<
+React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+'type' | 'ref'
+> {
+\tdisabled?: boolean
+\thtmlType?: 'submit' | 'reset' | 'button'
+
+\ttype?: 'default' | 'accent'
+\tonClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
+
+\ticonLeft?: React.ReactElement<IconProps>
+\ticonRight?: React.ReactElement<IconProps>
+}
+			`}/>
 
 			<Footer
 				sourcePageCodeURL={{

@@ -34,6 +34,7 @@
     "no-alert": "warn",
     "no-console": "warn",
     "no-else-return": ["error", { "allowElseIf": false }],
+    "@typescript-eslint/restrict-template-expressions": "off",
     "no-implicit-coercion": "error",
     "no-labels": "error",
     "no-lone-blocks": "error",

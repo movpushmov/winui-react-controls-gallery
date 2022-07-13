@@ -11,6 +11,7 @@ import { SplitButtonPage } from './pages/BasicInput/SplitButton/SplitButtonPage'
 import { CheckBoxPage } from './pages/BasicInput/CheckBox/CheckBoxPage'
 import { ContentDialogPage } from './pages/DialogsAndFlyouts/ContentDialog/ContentDialogPage'
 import { CalendarViewPage } from './pages/DateAndTime/CalendarView/CalendarViewPage'
+import { FlyoutPage } from './pages/DialogsAndFlyouts/Flyout/FlyoutPage'
 
 function App(): React.ReactElement {
 	const { t } = useTranslation()
@@ -35,6 +36,7 @@ function App(): React.ReactElement {
 
 
 					<Route path="/DialogsAndFlyouts/ContentDialog"><ContentDialogPage/></Route>
+					<Route path="/DialogsAndFlyouts/Flyout"><FlyoutPage/></Route>
 
 					<Route path="/DateAndTime/CalendarView"><CalendarViewPage/></Route>
 				</Switch>
