@@ -20,7 +20,11 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 		if (e.isSettings) {
 			history.push('/settings')
 		} else if (e.selectedValues) {
-			history.push(e.selectedValues[0].toString() || '/')
+			const [value] = e.selectedValues
+
+			if (value) {
+				history.push(value.toString() || '/')
+			}
 		}
 	}, [history])
 
@@ -56,6 +60,9 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 			<NavigationViewItem title="Navigation" value="/navigation" icon={IconType.GlobalNavButton}>
 				<NavigationViewItem title="BreadcrumbBar" value="/navigation/BreadcrumbBar"/>
 				<NavigationViewItem title="NavigationView" value="/navigation/NavigationView"/>
+			</NavigationViewItem>
+			<NavigationViewItem title="Date and Time" value="dateAndTime" icon={IconType.Calendar}>
+				<NavigationViewItem title="CalendarView" value="/dateAndTime/CalendarView"/>
 			</NavigationViewItem>
 			<NavigationViewItem title="Status and info" value="statusAndInfo" icon={IconType.ActionCenter}>
 				<NavigationViewItem title="InfoBadge" value="infoBadge"/>

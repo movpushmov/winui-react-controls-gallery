@@ -34,6 +34,7 @@
     "no-alert": "warn",
     "no-console": "warn",
     "no-else-return": ["error", { "allowElseIf": false }],
+    "@typescript-eslint/restrict-template-expressions": "off",
     "no-implicit-coercion": "error",
     "no-labels": "error",
     "no-lone-blocks": "error",
@@ -138,6 +139,7 @@
     "@typescript-eslint/no-shadow": "off",
 
     "react/no-access-state-in-setstate": "error",
+    "react/display-name": "off",
     "react/no-danger": "error",
     "react/no-multi-comp": "error",
     "react/no-this-in-sfc": "error",
