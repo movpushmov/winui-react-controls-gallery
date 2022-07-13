@@ -116,16 +116,12 @@ export const ButtonPage = (): React.ReactElement => {
 				</Button>
 			</CodeExample>
 
-<<<<<<< Updated upstream
-=======
-
 			<TitleBlock>
 				{t('propsDefinition')}
 			</TitleBlock>
 
 			<CodeBlock standalone language="typescript" code={props}/>
 
->>>>>>> Stashed changes
 			<Footer
 				sourcePageCodeURL={{
 					componentType: 'BasicInput',
