@@ -7,11 +7,11 @@ import { Footer } from '../../../components/Footer/Footer'
 import { CodeBlock } from '../../../components/CodeExample/components/CodeBlock'
 
 type CodeExampleFunc = (
-	t: TFunction<'translation'>,
+	t: TFunction,
 ) => string
 
 type SimpleCodeExampleFunc = (
-	t: TFunction<'translation'>,
+	t: TFunction,
 	disabled: boolean
 ) => string
 

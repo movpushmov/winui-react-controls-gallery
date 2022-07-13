@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { useHistory, useLocation } from 'react-router'
+import { useNavigate, useLocation } from 'react-router'
 import { NavigationView, NavigationViewSelectEvent } from '../lib/Navigation/NavigationView/NavigationView'
 import { NavigationViewItem, IconType } from '../lib'
 
@@ -10,7 +10,7 @@ interface NavigationViewProps {
 const lastSymbolsLength = 1
 
 export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactElement => {
-	const history = useHistory()
+	const navigate = useNavigate()
 	const location = useLocation().pathname
 
 	const path = location.endsWith('/') ?
@@ -18,15 +18,15 @@ export const NavigationBar = ({ setIsOpen } : NavigationViewProps): React.ReactE
 
 	const selectHandler = useCallback((e: NavigationViewSelectEvent) => {
 		if (e.isSettings) {
-			history.push('/settings')
+			navigate('/settings')
 		} else if (e.selectedValues) {
 			const [value] = e.selectedValues
 
 			if (value) {
-				history.push(value.toString() || '/')
+				navigate(value.toString() || '/')
 			}
 		}
-	}, [history])
+	}, [navigate])
 
 	return (
 		<NavigationView

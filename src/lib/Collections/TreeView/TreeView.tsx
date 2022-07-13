@@ -398,7 +398,7 @@ function getHandlerSelect(
 }
 
 function getSubItemsOpenHandler(handler: (key: Key) => void, depth: number, key: Key) {
-	return (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+	return (e: React.MouseEvent<HTMLButtonElement>) => {
 		handler(`tree-view-sub-open-list-${depth}-${key}`)
 
 		e.stopPropagation()

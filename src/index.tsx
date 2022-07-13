@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
@@ -11,6 +10,7 @@ import './index.css'
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import { BrowserRouter } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 
 const resources = {
 	ru: { translation: ru },
@@ -27,13 +27,14 @@ void i18next
 		},
 	})
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root')!)
+
+root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<App />
 		</BrowserRouter>
-	</React.StrictMode>,
-	document.getElementById('root'),
+	</React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function

@@ -14,6 +14,7 @@ interface DropDownProps {
 	onSelect?: (value: any) => void
 
 	items?: DropDownItem[] | React.ReactElement[]
+	buttonRef?: React.RefObject<HTMLButtonElement | null>
 	emptyMessage: string
 }
 
@@ -29,8 +30,12 @@ function prepareClickHandler(
 }
 
 export function DropDown(props: DropDownProps): React.ReactElement {
-	const ref = useOuterClick(() => {
+	const ref = useOuterClick(e => {
 		if (props.visible) {
+			if (props.buttonRef && props.buttonRef.current?.contains(e.target as HTMLElement)) {
+				return
+			}
+
 			props.close?.()
 		}
 	})

@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 import { Footer } from '../../../components/Footer/Footer'
 
 type CodeExampleFunc = (
-	t: TFunction<'translation'>,
+	t: TFunction,
 ) => string
 
 const simpleDropdown: CodeExampleFunc = t => `

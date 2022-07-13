@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './lib/winui.css'
 import { NavigationBar } from './components/NavigationView'
-import { Route, Switch } from 'react-router'
+import { Route, Routes } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import { ButtonPage } from './pages/BasicInput/Button/ButtonPage'
 import { DropdownButtonPage } from './pages/BasicInput/DropdownButton/DropdownButtonPage'
@@ -26,20 +26,20 @@ function App(): React.ReactElement {
 					{ margin: '32px 48px 32px 348px', transition: '.1s ease', flex: 1 } :
 					{ margin: '32px 48px 32px 96px', transition: '.1s ease', flex: 1 }
 				}>
-				<Switch>
-					<Route path="/BasicInput/Button"><ButtonPage/></Route>
-					<Route path="/BasicInput/DropdownButton"><DropdownButtonPage/></Route>
-					<Route path="/BasicInput/HyperlinkButton"><HyperlinkButtonPage/></Route>
-					<Route path="/BasicInput/ToggleButton"><ToggleButtonPage/></Route>
-					<Route path="/BasicInput/SplitButton"><SplitButtonPage/></Route>
-					<Route path="/BasicInput/CheckBox"><CheckBoxPage/></Route>
+				<Routes>
+					<Route path="/BasicInput/Button" element={<ButtonPage/>}/>
+					<Route path="/BasicInput/DropdownButton" element={<DropdownButtonPage/>}/>
+					<Route path="/BasicInput/HyperlinkButton" element={<HyperlinkButtonPage/>}/>
+					<Route path="/BasicInput/ToggleButton" element={<ToggleButtonPage/>}/>
+					<Route path="/BasicInput/SplitButton" element={<SplitButtonPage/>}/>
+					<Route path="/BasicInput/CheckBox" element={<CheckBoxPage/>}/>
 
 
-					<Route path="/DialogsAndFlyouts/ContentDialog"><ContentDialogPage/></Route>
-					<Route path="/DialogsAndFlyouts/Flyout"><FlyoutPage/></Route>
+					<Route path="/DialogsAndFlyouts/ContentDialog" element={<ContentDialogPage/>}/>
+					<Route path="/DialogsAndFlyouts/Flyout" element={<FlyoutPage/>}/>
 
-					<Route path="/DateAndTime/CalendarView"><CalendarViewPage/></Route>
-				</Switch>
+					<Route path="/DateAndTime/CalendarView" element={<CalendarViewPage/>}/>
+				</Routes>
 			</div>
 		</div>
 	)

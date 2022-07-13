@@ -4,7 +4,7 @@ import { Button, CheckBox, ContentDialog, ContentDialogSection, TextBlock, Title
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { Footer } from '../../../components/Footer/Footer'
 
-const codeExample = (t: TFunction<'translation'>): string => `
+const codeExample = (t: TFunction): string => `
 <ContentDialog
     visible={open}
     title="${t('DialogsAndFlyouts.ContentDialog.samples.default.dialog.title')}"
