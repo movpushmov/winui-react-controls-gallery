@@ -1,13 +1,14 @@
 {
+  "propsDefinition": "Описание параметров",
   "footer": {
     "sourcePage": {
-      "title": "View page on GitHub",
-      "desc": "React source code"
+      "title": "Посмотреть эту страницу на GitHub",
+      "desc": "Исходный код React"
     },
-    "relatedControls": "Related controls",
+    "relatedControls": "Связанные компоненты",
     "feedback": {
-      "title": "Feedback",
-      "desc": "Send feedback about this page"
+      "title": "Отзывы",
+      "desc": "Оставьте отзыв об этой странице"
     }
   },
 

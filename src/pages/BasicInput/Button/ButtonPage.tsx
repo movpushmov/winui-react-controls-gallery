@@ -4,6 +4,7 @@ import { TFunction, useTranslation } from 'react-i18next'
 import { Button, CheckBox, CheckBoxState, TextBlock, TitleBlock } from '../../../lib'
 import styles from './styles.module.css'
 import { Footer } from '../../../components/Footer/Footer'
+import { CodeBlock } from '../../../components/CodeExample/components/CodeBlock'
 
 type CodeExampleFunc = (
 	t: TFunction<'translation'>,
@@ -34,6 +35,22 @@ const largeContentButtonCode: CodeExampleFunc = t => `
 <Button style={{ width: '120px' }}>
     ${t('BasicInput.Button.samples.large_content.content')}
 </Button>`
+
+const props = `
+export interface ButtonProps extends Omit<
+React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+'type' | 'ref'
+> {
+\tdisabled?: boolean
+\thtmlType?: 'submit' | 'reset' | 'button'
+
+\ttype?: 'default' | 'accent'
+\tonClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
+
+\ticonLeft?: React.ReactElement<IconProps>
+\ticonRight?: React.ReactElement<IconProps>
+}
+`.trim()
 
 export const ButtonPage = (): React.ReactElement => {
 	const { t } = useTranslation()
@@ -99,6 +116,16 @@ export const ButtonPage = (): React.ReactElement => {
 				</Button>
 			</CodeExample>
 
+<<<<<<< Updated upstream
+=======
+
+			<TitleBlock>
+				{t('propsDefinition')}
+			</TitleBlock>
+
+			<CodeBlock standalone language="typescript" code={props}/>
+
+>>>>>>> Stashed changes
 			<Footer
 				sourcePageCodeURL={{
 					componentType: 'BasicInput',

@@ -35,6 +35,13 @@
     border-top: 1px solid #EAEAEA;
 }
 
+.code-block-standalone {
+    background-color: #ececec !important;
+    margin: 0;
+    padding: 8px !important;
+
+    border-radius: 8px;
+}
 
 @media (prefers-color-scheme: dark) {
     .main-block {
@@ -49,6 +56,11 @@
         background-color: #1C1C1C !important;
         border-color: rgba(117, 117, 117, 0.4);
     }
+
+    .code-block-standalone {
+        background-color: #2c2c2c !important;
+    }
+
 
     .right-block {
         background-color: #1C1C1C;
