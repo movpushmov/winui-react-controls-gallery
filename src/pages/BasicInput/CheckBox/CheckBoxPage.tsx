@@ -10,6 +10,16 @@ const twoState = (t: TFunction): string =>
 const threeState = (t: TFunction): string =>
 	`<CheckBox content="${t('BasicInput.CheckBox.samples.three_state.content')}" isThreeState/>`
 
+const usingThreeState = (t: TFunction): string => `
+<TreeView selectionMode="multiply">
+\t<TreeNode title="${t('BasicInput.CheckBox.samples.using_three_state.top_label')}">
+\t\t<TreeNode title="${t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 1 })}"/>
+\t\t<TreeNode title="${t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 2 })}"/>
+\t\t<TreeNode title="${t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 3 })}"/>
+\t</TreeNode>
+</TreeView>
+`
+
 export const CheckBoxPage = (): React.ReactElement => {
 	const { t } = useTranslation()
 
@@ -36,13 +46,13 @@ export const CheckBoxPage = (): React.ReactElement => {
 
 			<CodeExample
 				title={t('BasicInput.CheckBox.samples.using_three_state.title')}
-				code={threeState(t)}
+				code={usingThreeState(t)}
 			>
-				<TreeView selectionMode="multiply" onValueSelect={v => console.log(v)}>
-					<TreeNode title="Options">
-						<TreeNode title="Option 1"/>
-						<TreeNode title="Option 2"/>
-						<TreeNode title="Option 3"/>
+				<TreeView selectionMode="multiply">
+					<TreeNode title={t('BasicInput.CheckBox.samples.using_three_state.top_label')}>
+						<TreeNode title={t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 1 })}/>
+						<TreeNode title={t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 2 })}/>
+						<TreeNode title={t('BasicInput.CheckBox.samples.using_three_state.sub_label', { index: 3 })}/>
 					</TreeNode>
 				</TreeView>
 			</CodeExample>

@@ -262,7 +262,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 
 		if (node.root && node.children) {
 			return node.children.map((n, index) =>
-				<TreeListView key={`tree-view-sub-list-${depth}-${index}`}>
+				<TreeListView key={`tree-view-sub-list-${depth}-${index}`} style={{ padding: 0 }}>
 					{treeToReact(n, selectedKeys, depth)}
 				</TreeListView>,
 			)
@@ -295,7 +295,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 					>
 						{node.icon && <Icon type={node.icon}/>}
 						{defaultProps.dropdownIconPosition === 'right' ?
-							<TextBlock>{node.title}</TextBlock> : null}
+							<TextBlock style={{ margin: 0 }}>{node.title}</TextBlock> : null}
 
 						<Button
 							className={styles[`chevron-button-${defaultProps.dropdownIconPosition}`]}
@@ -315,7 +315,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 						/>
 
 						{defaultProps.dropdownIconPosition === 'left' ?
-							<TextBlock>{node.title}</TextBlock> : null}
+							<TextBlock style={{ margin: 0 }}>{node.title}</TextBlock> : null}
 					</ListViewItem>
 
 					{node.children.map((n, i) =>
@@ -337,7 +337,10 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 				key={node.value}
 				selectionMode={props.selectionMode}
 				listKey={node.value}
-				className={styles['tree-list-view-item']}
+				className={defaultProps.selectionMode === 'multiply' ?
+					styles['list-view-item-no-effects'] :
+					styles['tree-list-view-item']
+				}
 				onClick={getHandlerSelect(
 					selectHandler,
 					node.childrenValues,
