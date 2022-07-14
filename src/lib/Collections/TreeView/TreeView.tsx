@@ -1,5 +1,5 @@
 import { Icon, IconType } from '../../Icons/Icon'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { SelectionMode } from '../ListView/ListView'
 import { ListViewItem } from '../ListView/ListViewItem'
 import { TreeListView } from './TreeListView'
@@ -157,19 +157,15 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 		}
 	}
 
-	function getChildren(): React.ReactElement<PublicTreeNodeProps>[] {
+	const getChildren = useCallback(() => {
 		if (defaultProps.children) {
 			return Array.isArray(defaultProps.children) ?
 				defaultProps.children : [defaultProps.children]
 		}
 		return []
+	}, [defaultProps.children])
 
-	}
-
-	function getNodeProps(
-		node: React.ReactElement<PublicTreeNodeProps>,
-		index: number,
-	): TreeViewNode {
+	const getNodeProps = useCallback((node: React.ReactElement<PublicTreeNodeProps>, index: number) => {
 		const currentObject: TreeViewNode = {
 			title: node.props.title,
 			icon: node.props.icon,
@@ -202,7 +198,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 		}
 
 		return currentObject
-	}
+	}, [])
 
 	useEffect(() => {
 		const nodes: TreeViewNode[] = []
@@ -212,9 +208,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 		})
 
 		setNodes(nodes)
-
-		// eslint-disable-next-line
-	}, [props.children])
+	}, [getChildren, getNodeProps])
 
 	const [visibleSubLists, setVisibleSubLists] = useState<Key[]>([])
 
@@ -242,7 +236,6 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 		}
 
 		return CheckBoxState.Unchecked
-
 	}
 
 	function subOpenHandler(key: Key): void {
@@ -338,6 +331,7 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 				</>
 			)
 		}
+
 		return (
 			<ListViewItem
 				key={node.value}
@@ -346,10 +340,8 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 				className={styles['tree-list-view-item']}
 				onClick={getHandlerSelect(
 					selectHandler,
-					[],
+					node.childrenValues,
 					defaultProps.selectionMode,
-					void 0,
-					node.value,
 				)}
 				selected={selectedKeys.includes(node.value)}
 			>

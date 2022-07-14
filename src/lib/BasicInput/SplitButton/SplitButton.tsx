@@ -1,4 +1,4 @@
-import React, { CSSProperties, useCallback, useEffect, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { Button } from '../Button/Button'
 import styles from './styles.module.css'
 import { Icon, IconType } from '../../Icons/Icon'
@@ -32,6 +32,7 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 	}, props)
 
 	const { items, emptyMessage, onSelect, ...otherProps } = defaultProps
+	const buttonRef = useRef<HTMLButtonElement>(null)
 
 	const [visible, setIsVisible] = useState(false)
 	const [animateIcon, setIsAnimateIcon] = useState(false)
@@ -63,6 +64,7 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 					disabled={otherProps.disabled}
 					className={`${styles['dropdown-button']} ${animateIcon ? styles['animate-icon'] : ''}`}
 					onClick={visibilityToggleHandler}
+					ref={buttonRef}
 				>
 					<Icon type={IconType.ChevronDown} />
 				</Button>
@@ -74,6 +76,7 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 				emptyMessage={defaultProps.emptyMessage}
 				onSelect={onSelect}
 				items={items}
+				buttonRef={buttonRef}
 			/>
 		</div>
 	)
