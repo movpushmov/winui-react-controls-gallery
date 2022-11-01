@@ -3,6 +3,7 @@ import styles from './styles.module.css'
 import { Tooltip } from '../../StatusAndInfo/Tooltip/Tooltip'
 import { TextBlock } from '../../Text/Text/TextBlock'
 import { useSliderLogic } from './useSliderLogic'
+import classNames from 'classnames'
 
 export interface SliderProps extends Omit<
 React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -46,7 +47,7 @@ export const Slider = (props: SliderProps): React.ReactElement => {
 				}}
 			>
 				<div
-					className={`${styles['slider']} ${className || ''}`}
+					className={classNames(styles['slider'], className)}
 					style={style}
 				>
 					<input

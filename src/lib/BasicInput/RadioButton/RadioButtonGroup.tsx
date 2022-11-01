@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { RadioButton, RadioButtonProps } from './RadioButton'
 
 import styles from './styles.module.css'
+import classNames from 'classnames'
 
 interface RadioButtonGroupProps extends React.DetailedHTMLProps<
 React.BaseHTMLAttributes<HTMLDivElement>, HTMLDivElement
@@ -53,7 +54,7 @@ export const RadioButtonGroup = (props: RadioButtonGroupProps): React.ReactEleme
 
 	return (
 		<div
-			className={`${styles['radio-buttons-group']} ${className || ''}`}
+			className={classNames(styles['radio-buttons-group'], className)}
 			{...otherProps}
 		>
 			{Array.isArray(children) ? returnGroup(children) : returnGroup([children])}

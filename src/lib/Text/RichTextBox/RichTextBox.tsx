@@ -3,6 +3,7 @@ import styles from '../TextBox/styles.module.css'
 import { Button } from '../../BasicInput/Button/Button'
 import { Icon, IconType } from '../../Icons/Icon'
 import { TextBlock } from '../Text/TextBlock'
+import classNames from 'classnames'
 
 type TextAreaProps =
     React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>
@@ -66,11 +67,11 @@ export const RichTextBox = (props: RichTextBoxProps): React.ReactElement => {
 		<div>
 			{header && <TextBlock type="body-strong">{header}</TextBlock>}
 
-			<div className={`${containerClassName || ''} ${styles['input-container']}`} {...otherContainerProps}>
+			<div className={classNames(containerClassName, styles['input-container'])}{...otherContainerProps}>
 				<textarea
 					value={currentValue}
 					onChange={onChangeHandler}
-					className={`${styles['input']} ${inputClassName || ''}`} {...otherProps}
+					className={classNames(styles['input'], inputClassName)} {...otherProps}
 				/>
 				<Button
 					onClick={clearHandler}

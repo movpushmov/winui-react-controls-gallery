@@ -3,6 +3,7 @@ import { Button } from '../Button/Button'
 import styles from './styles.module.css'
 import { Icon, IconType } from '../../Icons/Icon'
 import { DropDown } from './DropDown'
+import classNames from 'classnames'
 
 export type DropDownItem = {
 	icon?: IconType
@@ -51,15 +52,21 @@ export function DropDownButton(props: DropDownButtonProps): React.ReactElement {
 		setIsVisible(v => !v)
 	}, [onClick])
 
-	const closeHandler = useCallback(() => setIsVisible(false), [])
+	const closeHandler = useCallback((e: Event) => setIsVisible(isVisible => {
+		if (buttonRef.current?.contains(e.target as HTMLElement)) {
+			return isVisible
+		}
+
+		return !isVisible
+	}), [])
 
 	return (
-		<div className={`${styles['dropdown']} ${defaultProps.className}`}>
+		<div className={classNames(styles['dropdown'], defaultProps.className)}>
 			<Button
 				ref={buttonRef}
 				{...otherProps}
 				onClick={clickHandler}
-				className={`${styles['dropdown-button']} ${animateIcon ? styles['animate-icon'] : ''}`}
+				className={classNames(styles['dropdown-button'], animateIcon ? styles['animate-icon'] : void 0)}
 				iconRight={<Icon type={IconType.ChevronDown} style={{ marginLeft: '16px' }} />}
 			/>
 
@@ -68,7 +75,6 @@ export function DropDownButton(props: DropDownButtonProps): React.ReactElement {
 				close={closeHandler}
 				emptyMessage={defaultProps.emptyMessage}
 				onSelect={onSelect}
-				buttonRef={buttonRef}
 				items={items}
 			/>
 		</div>

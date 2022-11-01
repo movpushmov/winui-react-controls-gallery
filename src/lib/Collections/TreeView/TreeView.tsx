@@ -268,9 +268,9 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 			)
 		}
 
-		if (node.children && node.children.length > 0) {
-			const checkBoxState = getItemCheckBoxState(node.childrenValues)
+		const checkBoxState = getItemCheckBoxState(node.childrenValues)
 
+		if (node.children && node.children.length > 0) {
 			return (
 				<>
 					<ListViewItem
@@ -345,6 +345,8 @@ export const TreeView = (props: TreeViewProps): React.ReactElement => {
 					selectHandler,
 					node.childrenValues,
 					defaultProps.selectionMode,
+					checkBoxState,
+					node.value
 				)}
 				selected={selectedKeys.includes(node.value)}
 			>

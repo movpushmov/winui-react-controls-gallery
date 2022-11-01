@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from './styles.module.css'
 import { TextBlock } from '../../Text/Text/TextBlock'
+import classNames from 'classnames'
 
 export interface RadioButtonProps extends Omit<
 React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -42,7 +43,7 @@ export const RadioButton = (props: RadioButtonProps): React.ReactElement => {
 		<label className={styles['radio-label']} style={{ cursor: props.disabled ? 'default' : 'pointer' }}>
 			<input
 				type="radio"
-				className={`${styles['radio']} ${className || ''}`}
+				className={classNames(styles['radio'], className)}
 				{...otherProps}
 				checked={currentValue}
 				onChange={clickHandler}

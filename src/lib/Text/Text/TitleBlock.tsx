@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 import getStyles, { TextBlockPropsBase } from '../utils'
+import classNames from 'classnames'
 
 interface TextBlockProps extends TextBlockPropsBase{
 	type?:
@@ -26,7 +27,7 @@ export function TitleBlock(props: TextBlockProps): React.ReactElement {
 			return (
 				<h3
 					{...otherProps}
-					className={`${styles['title']} ${getStyles(defaultProps)} ${className || ''}`}
+					className={classNames(styles['title'], getStyles(defaultProps), className)}
 				>
 					{children || ' '}
 				</h3>
@@ -35,7 +36,7 @@ export function TitleBlock(props: TextBlockProps): React.ReactElement {
 			return (
 				<h2
 					{...otherProps}
-					className={`${styles['title-large']} ${getStyles(defaultProps)} ${className || ''}`}
+					className={classNames(styles['title-large'], getStyles(defaultProps), className)}
 				>
 					{children || ' '}
 				</h2>
@@ -44,7 +45,7 @@ export function TitleBlock(props: TextBlockProps): React.ReactElement {
 			return (
 				<h1
 					{...otherProps}
-					className={`${styles['display']} ${getStyles(defaultProps)} ${className || ''}`}
+					className={classNames(styles['display'], getStyles(defaultProps), className)}
 				>
 					{children || ' '}
 				</h1>
@@ -55,7 +56,7 @@ export function TitleBlock(props: TextBlockProps): React.ReactElement {
 	return (
 		<h4
 			{...otherProps}
-			className={`${styles['subtitle']} ${getStyles(defaultProps)} ${className || ''}`}
+			className={classNames(styles['subtitle'], getStyles(defaultProps), className)}
 		>
 			{children || ' '}
 		</h4>

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { DropDownButtonProps } from './ToggleSplitButton'
 
 interface UseButtonLogicResult {
@@ -6,9 +6,11 @@ interface UseButtonLogicResult {
 	visible: boolean
 	animateIcon: boolean
 
-	closeHandler: () => void
+	closeHandler: (e: Event) => void
 	openHandler: () => void
+	forceClose: () => void
 	toggleHandler: (e: React.MouseEvent<HTMLButtonElement>) => void
+	ref?: React.RefObject<HTMLDivElement>
 }
 
 type PropsType = {
@@ -22,6 +24,7 @@ export function useButtonLogic(props: PropsType): UseButtonLogicResult {
 	)
 	const [visible, setIsVisible] = useState(false)
 	const [animateIcon, setIsAnimateIcon] = useState(false)
+	const ref = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		setIsAnimateIcon(false)
@@ -48,15 +51,27 @@ export function useButtonLogic(props: PropsType): UseButtonLogicResult {
 
 	}, [props])
 
-	const openHandler = useCallback(() => setIsVisible(true), [])
-	const closeHandler = useCallback(() => setIsVisible(false), [])
+	const openHandler = useCallback(() => {
+		if (!visible) {
+			setIsVisible(true)
+		}
+	}, [visible])
+	const closeHandler = useCallback((e: Event) => {
+		if (visible && !ref.current?.contains(e.target as HTMLElement)) {
+			setIsVisible(false)
+		}
+	}, [visible])
+
+	const forceClose = useCallback(() => setIsVisible(false), [])
 
 	return {
 		toggled,
 		visible,
 		animateIcon,
+		forceClose,
 		toggleHandler,
 		closeHandler,
 		openHandler,
+		ref,
 	}
 }

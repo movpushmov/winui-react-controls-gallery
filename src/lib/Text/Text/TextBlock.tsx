@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 import getStyles, { TextBlockPropsBase } from '../utils'
+import classNames from 'classnames'
 
 interface TextBlockProps extends TextBlockPropsBase{
 	type?: 'caption' | 'body' | 'body-strong' | 'body-large'
@@ -17,7 +18,7 @@ export function TextBlock(props: TextBlockProps): React.ReactElement {
 	return (
 		<p
 			{...otherProps}
-			className={`${styles[type || 'body']} ${getStyles(defaultProps)} ${className || ''}`}
+			className={classNames(styles[type ?? 'body'], getStyles(defaultProps), className)}
 		/>
 	)
 }

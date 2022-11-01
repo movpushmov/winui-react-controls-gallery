@@ -3,6 +3,7 @@ import { Button } from '../Button/Button'
 import styles from './styles.module.css'
 import { Icon, IconType } from '../../Icons/Icon'
 import { DropDown } from '../DropDownButton/DropDown'
+import classNames from 'classnames'
 
 export type DropDownItem = {
 	icon?: IconType
@@ -32,7 +33,7 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 	}, props)
 
 	const { items, emptyMessage, onSelect, ...otherProps } = defaultProps
-	const buttonRef = useRef<HTMLButtonElement>(null)
+	const containerRef = useRef<HTMLDivElement>(null)
 
 	const [visible, setIsVisible] = useState(false)
 	const [animateIcon, setIsAnimateIcon] = useState(false)
@@ -50,21 +51,26 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 		[],
 	)
 
-	const closeHandler = useCallback(() => setIsVisible(false), [])
+	const closeHandler = useCallback((e: Event) => setIsVisible(isVisible => {
+		if (containerRef.current?.contains(e.target as HTMLElement)) {
+			return isVisible
+		}
+
+		return !isVisible
+	}), [])
 
 	return (
-		<div className={`${styles['dropdown']} ${defaultProps.className}`}>
-			<div className={styles['buttons-row']}>
+		<div className={classNames(styles['dropdown'], defaultProps.className)}>
+			<div className={styles['buttons-row']} ref={containerRef}>
 				<Button
 					{...otherProps}
-					className={`${styles['content-button']}`}
+					className={styles['content-button']}
 				/>
 
 				<Button
 					disabled={otherProps.disabled}
-					className={`${styles['dropdown-button']} ${animateIcon ? styles['animate-icon'] : ''}`}
+					className={classNames(styles['dropdown-button'], animateIcon ? styles['animate-icon'] : void 0)}
 					onClick={visibilityToggleHandler}
-					ref={buttonRef}
 				>
 					<Icon type={IconType.ChevronDown} />
 				</Button>
@@ -76,7 +82,6 @@ export function SplitButton(props: SplitButtonProps): React.ReactElement {
 				emptyMessage={defaultProps.emptyMessage}
 				onSelect={onSelect}
 				items={items}
-				buttonRef={buttonRef}
 			/>
 		</div>
 	)

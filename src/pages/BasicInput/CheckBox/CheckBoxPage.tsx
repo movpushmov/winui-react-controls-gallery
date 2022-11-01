@@ -1,8 +1,15 @@
 import { useTranslation } from 'react-i18next'
-import { CheckBox, TextBlock, TitleBlock, TreeNode, TreeView } from '../../../lib'
+import {
+	CheckBox,
+	TextBlock,
+	TitleBlock,
+	TreeNode,
+	TreeView,
+} from '../../../lib'
 import React from 'react'
 import { CodeExample } from '../../../components/CodeExample/CodeExample'
 import { TFunction } from 'i18next'
+import { Footer } from '../../../components/Footer/Footer'
 
 const twoState = (t: TFunction): string =>
 	`<CheckBox content="${t('BasicInput.CheckBox.samples.two_state.content')}"/>`
@@ -56,6 +63,14 @@ export const CheckBoxPage = (): React.ReactElement => {
 					</TreeNode>
 				</TreeView>
 			</CodeExample>
+
+			<Footer
+				sourcePageCodeURL={{
+					componentType: 'BasicInput',
+					componentName: 'CheckBox',
+				}}
+				relatedControls={t('BasicInput.CheckBox.related', { returnObjects: true })}
+			/>
 		</div>
 	)
 }

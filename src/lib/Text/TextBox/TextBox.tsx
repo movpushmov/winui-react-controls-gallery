@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react'
+import React, { ForwardedRef, useCallback, useState } from 'react'
 import styles from './styles.module.css'
 import { Button } from '../../BasicInput/Button/Button'
 import { Icon, IconType } from '../../Icons/Icon'
 import { TextBlock } from '../Text/TextBlock'
+import classNames from 'classnames'
 
 type InputProps =
     React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -16,6 +17,7 @@ interface TextBoxProps extends Omit<InputProps, 'type'> {
 
 	enableClearButton?: boolean
 	header?: string
+	containerRef?: React.LegacyRef<HTMLDivElement>
 }
 
 export const TextBox = (props: TextBoxProps): React.ReactElement => {
@@ -28,6 +30,7 @@ export const TextBox = (props: TextBoxProps): React.ReactElement => {
 		header,
 		value,
 		defaultValue,
+		containerRef,
 		...otherProps
 	} = props
 	const [show, setIsShow] = useState(Boolean(value ?? defaultValue))
@@ -67,15 +70,15 @@ export const TextBox = (props: TextBoxProps): React.ReactElement => {
 	}
 
 	return (
-		<div>
+		<div ref={containerRef}>
 			{header && <TextBlock type="body-strong">{header}</TextBlock>}
 
-			<div className={`${containerClassName || ''} ${styles['input-container']}`} {...otherContainerProps}>
+			<div className={classNames(styles['input-container'], containerClassName)} {...otherContainerProps}>
 				<input
 					type={type}
 					value={currentValue}
 					onChange={onChangeHandler}
-					className={`${styles['input']} ${inputClassName || ''}`} {...otherProps}
+					className={classNames(styles['input'], inputClassName)} {...otherProps}
 				/>
 				{props.type === 'password' ?
 					<Button

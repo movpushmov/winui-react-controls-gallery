@@ -18,14 +18,6 @@ export const CalendarViewPage = (): React.ReactElement => {
 				<CalendarView
 					selectionMode="none"
 					locale="ru"
-					validator={date => {
-						if (date.type === 'day') {
-							// eslint-disable-next-line @typescript-eslint/no-magic-numbers
-							return date.value.getDate() > 4
-						}
-
-						return true
-					}}
 				/>
 			</CodeExample>
 

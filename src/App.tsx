@@ -12,6 +12,9 @@ import { CheckBoxPage } from './pages/BasicInput/CheckBox/CheckBoxPage'
 import { ContentDialogPage } from './pages/DialogsAndFlyouts/ContentDialog/ContentDialogPage'
 import { CalendarViewPage } from './pages/DateAndTime/CalendarView/CalendarViewPage'
 import { FlyoutPage } from './pages/DialogsAndFlyouts/Flyout/FlyoutPage'
+import { ToggleSwitchPage } from './pages/BasicInput/ToggleSwitch/ToggleSwitchPage'
+import { ToggleSplitButtonPage } from './pages/BasicInput/ToggleSplitButton/ToggleSplitButtonPage'
+import { SliderPage } from './pages/BasicInput/Slider/SliderPage'
 
 function App(): React.ReactElement {
 	const { t } = useTranslation()
@@ -33,7 +36,9 @@ function App(): React.ReactElement {
 					<Route path="/BasicInput/ToggleButton" element={<ToggleButtonPage/>}/>
 					<Route path="/BasicInput/SplitButton" element={<SplitButtonPage/>}/>
 					<Route path="/BasicInput/CheckBox" element={<CheckBoxPage/>}/>
-
+					<Route path="/BasicInput/ToggleSwitch" element={<ToggleSwitchPage/>}/>
+					<Route path="/BasicInput/ToggleSplitButton" element={<ToggleSplitButtonPage/>}/>
+					<Route path="/BasicInput/Slider" element={<SliderPage/>}/>
 
 					<Route path="/DialogsAndFlyouts/ContentDialog" element={<ContentDialogPage/>}/>
 					<Route path="/DialogsAndFlyouts/Flyout" element={<FlyoutPage/>}/>

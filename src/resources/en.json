@@ -134,8 +134,9 @@
       "long_desc": "A version of the SplitButton where the activation target toggles on/off.",
 
       "samples": {
-        "number_box": {
+        "text_box": {
           "title": "Using ToggleSplitButton to control type of TextBox.",
+          "button": "Some text",
           "content": "Type here...",
           "items": [
             "RedEye",
@@ -214,11 +215,6 @@
       "short_desc": "A switch that can be toggled between 2 states.",
       "long_desc": "Use ToggleSwitch controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate commit. A toggle switch should have a single label.",
       "samples": {
-        "simple": {
-          "title": "A simple ToggleSwitch.",
-          "checkbox": "Disable toggle switch"
-        },
-
         "custom_props": {
           "title": "A ToggleSwitch with custom header and content",
           "content": {

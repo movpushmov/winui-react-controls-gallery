@@ -2,6 +2,7 @@ import React, { ForwardedRef } from 'react'
 
 import styles from './styles.module.css'
 import { IconProps } from '../../Icons/Icon'
+import classNames from 'classnames'
 
 export interface ButtonProps extends Omit<
 React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
@@ -10,7 +11,7 @@ React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButto
 	disabled?: boolean
 	htmlType?: 'submit' | 'reset' | 'button'
 
-	type?: 'default' | 'accent'
+	type?: 'default' | 'accent' | 'unstyled'
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 
 	iconLeft?: React.ReactElement<IconProps>
@@ -32,7 +33,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: ForwardedRef<HT
 			type={htmlType}
 			ref={ref}
 			{...otherProps}
-			className={`${styles['btn' + (type !== 'default' ? '-accent' : '')]} ${className || ''}`}
+			className={classNames(styles['btn' + (type === 'default' ? '' : `-${type}`)], className)}
 		>
 			{iconLeft || null}
 			{children}

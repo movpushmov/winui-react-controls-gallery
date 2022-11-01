@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from './styles.module.css'
 import { TextBlock } from '../../Text/Text/TextBlock'
+import classNames from 'classnames'
 
 interface CheckBoxProps extends Omit<
 React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>,
@@ -98,7 +99,7 @@ export function CheckBox(props: CheckBoxProps): React.ReactElement {
 	return (
 		<div>
 			<div
-				className={`${styles['container']} ${props.className || ''}`}
+				className={classNames(styles['container'], props.className)}
 				style={props.style}
 				onClick={clickHandler}
 			>

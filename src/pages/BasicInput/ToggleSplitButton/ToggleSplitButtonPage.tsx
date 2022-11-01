@@ -31,10 +31,21 @@ type Color = {
 	hex: string
 }
 
+/*
+* "text_box": {
+          "title": "Using ToggleSplitButton to control type of TextBox.",
+          "content": "Type here...",
+          "items": [
+            "RedEye",
+            "Lock"
+          ]
+        }
+* */
+
 export const ToggleSplitButtonPage = (): React.ReactElement => {
 	const { t } = useTranslation()
-	const colors: Color[] = t(
-		'BasicInput.ToggleSplitButton.samples.number_box.content',
+	const items: string[] = t(
+		'BasicInput.ToggleSplitButton.samples.text_box.items',
 		{ returnObjects: true },
 	)
 
@@ -44,13 +55,13 @@ export const ToggleSplitButtonPage = (): React.ReactElement => {
 			<TextBlock>{t('BasicInput.ToggleSplitButton.long_desc')}</TextBlock>
 
 			<CodeExample
-				title={t('BasicInput.ToggleSplitButton.samples.number_box.title')}
+				title={t('BasicInput.ToggleSplitButton.samples.text_box.title')}
 				code={codeExample(
-					t('BasicInput.ToggleSplitButton.samples.number_box.content'),
+					t('BasicInput.ToggleSplitButton.samples.text_box.content'),
 				)}
 			>
 				<ToggleSplitButton
-					items={colors.map((color, key) =>
+					items={items.map((item, key) =>
 						<Button
 							key={key}
 							style={{
@@ -58,15 +69,11 @@ export const ToggleSplitButtonPage = (): React.ReactElement => {
 								marginLeft: 8, width: '100%', justifyContent: 'flex-start',
 							}}
 						>
-							<div
-								style={{ borderRadius: '50%', background: color.hex, width: 24, height: 24 }}
-							/>
-
-							<p style={{ margin: 8 }}>{color.name}</p>
+							<p style={{ margin: 8 }}>{item}</p>
 						</Button>,
 					)}
 				>
-					{t('BasicInput.ToggleSplitButton.samples.with_text.content')}
+					{t('BasicInput.ToggleSplitButton.samples.text_box.button')}
 				</ToggleSplitButton>
 			</CodeExample>
 

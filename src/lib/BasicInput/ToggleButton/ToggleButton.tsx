@@ -9,13 +9,12 @@ React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButto
 	initialValue?: boolean
 
 	value?: boolean
-	ref?: ForwardedRef<HTMLButtonElement>
 
 	onToggle?: (value: boolean) => void
 }
 
-export function ToggleButton(props: ToggleButtonProps): React.ReactElement {
-	const { onClick, initialValue, value, ref, ...otherProps } = props
+export const ToggleButton = React.forwardRef((props: ToggleButtonProps, ref: ForwardedRef<HTMLButtonElement>): React.ReactElement => {
+	const { onClick, initialValue, value, ...otherProps } = props
 	const [toggled, setIsToggled] = useState(
 		value !== void 0 ?
 			value : Boolean(initialValue),
@@ -52,4 +51,4 @@ export function ToggleButton(props: ToggleButtonProps): React.ReactElement {
 			type={toggled ? 'accent' : 'default'}
 		/>
 	)
-}
+})

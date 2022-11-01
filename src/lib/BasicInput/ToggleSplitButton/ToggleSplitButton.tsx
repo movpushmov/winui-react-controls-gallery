@@ -5,13 +5,19 @@ import { DropDown } from '../DropDownButton/DropDown'
 import { ToggleButton } from '../ToggleButton/ToggleButton'
 import { SplitButtonProps } from '../SplitButton/SplitButton'
 import { useButtonLogic } from './useButtonLogic'
+import classNames from 'classnames'
 
-export interface DropDownButtonProps extends SplitButtonProps {
+export interface DropDownButtonProps extends Omit<SplitButtonProps, 'disabled'> {
 	initialValue?: boolean
 	value?: boolean
 
 	onToggle?: (value: boolean) => void
 	emptyMessage?: string
+
+	disabled?: boolean | {
+		disableBaseButton?: boolean
+		disabledDropdownButton?: boolean
+	}
 }
 
 export function ToggleSplitButton(props: DropDownButtonProps): React.ReactElement {
@@ -33,14 +39,17 @@ export function ToggleSplitButton(props: DropDownButtonProps): React.ReactElemen
 
 	const buttonLogic = useButtonLogic(defaultProps)
 
+	const isBaseButtonDisabled = typeof props.disabled === 'boolean' ? props.disabled : Boolean(props.disabled?.disableBaseButton)
+	const isDropDownButtonDisabled = typeof props.disabled === 'boolean' ? props.disabled : Boolean(props.disabled?.disabledDropdownButton)
+
 	return (
-		<div className={`${styles['dropdown']} ${defaultProps.className || ''}`}>
-			<div className={`${styles['buttons-row']} ${className || ''}`} {...otherProps}>
+		<div className={classNames(styles['dropdown'], defaultProps.className)}>
+			<div className={classNames(styles['buttons-row'], className)} {...otherProps} ref={buttonLogic.ref}>
 				<ToggleButton
 					value={buttonLogic.toggled}
-					disabled={disabled}
+					disabled={isBaseButtonDisabled}
 					onClick={buttonLogic.toggleHandler}
-					className={`${styles['content-button']}`}
+					className={styles['content-button']}
 					style={{ borderRight: 'none' }}
 				>
 					{children}
@@ -48,8 +57,8 @@ export function ToggleSplitButton(props: DropDownButtonProps): React.ReactElemen
 
 				<ToggleButton
 					value={buttonLogic.toggled}
-					disabled={disabled}
-					className={`${styles['dropdown-button']} ${buttonLogic.animateIcon ? styles['animate-icon'] : ''}`}
+					disabled={isDropDownButtonDisabled}
+					className={classNames(styles['dropdown-button'], buttonLogic.animateIcon ? styles['animate-icon'] : void 0)}
 					onClick={buttonLogic.openHandler}
 
 					style={{
